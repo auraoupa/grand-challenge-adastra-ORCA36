@@ -30,6 +30,7 @@ Les choix à faire :
   - [ ] combien de niveaux verticaux 75 ou 150 ? 
   - [ ] forçages atmosphériques ?
   - [ ] paramètrisation ABL 1d ?
+ 
   ~~- [ ] runge-kutta ? pas prêt à temps pour le challenge~~
 
 ## Argumentaire scientifique
