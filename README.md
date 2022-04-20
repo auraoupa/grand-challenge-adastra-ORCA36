@@ -47,3 +47,16 @@ Stratégie d'outputs 3D horaires impossible.
     - [ ] courantomètres
 
 Stockage long-terme au CINES, utilisation sur Data Terra ?
+
+## Les actions
+
+Après [meeting du 20/04/2022](https://github.com/auraoupa/grand-challenge-adastra-ORCA36/blob/main/meetings/20220420.md) :
+
+  -  [ ] checker la bathy
+  -  [ ] outputs de glace Antartique simu Mercator
+  -  [ ] plus de questions scientifiques ?
+  -  [ ] discuter avec Camille et Claude pour la glace
+  -  [ ] discuter avec Mercator pour faire qq chose complémentaire
+  -  [ ] quantifier stratégie outputs
+  -  [ ] démarrer config toy dès que possible
+  -  [ ] check branche xios/nemo pour lire forçages avec xios
