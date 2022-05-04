@@ -10,7 +10,7 @@ Date de réalisation de la simulation : entre octobre 2022 et avril 2023 (peut �
 
 ## Argumentaire scientifique
 
-### pour la demande auprès de GENCI :
+### Pour la demande auprès de GENCI :
 
  Une simulation globale à très haute résolution avec la marée pour accompagner la mission SWOT, préparatoire à la mission WaCM
 
