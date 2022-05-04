@@ -10,53 +10,80 @@ Date de réalisation de la simulation : entre octobre 2022 et avril 2023 (peut �
 
 ## Argumentaire scientifique
 
-  - pour la demande auprès de GENCI :
- > Une simulation globale à très haute résolution avec la marée pour accompagner la mission SWOT, préparatoire à la mission WaCM
+### pour la demande auprès de GENCI :
 
-  - ce qui va être étudié avec la simulation au sein de l'IGE (et les spécifications associées) :
- > - algorithmes de mapping zones cross-over SWOT (sorties 3D horaires dans ces régions + version barotrope du modèle)
- > - étude de l'impact des tourbillons sur les transports de masse d'eau sur le plateau antartique (ouverture cavités Antartique + marée réaliste + bonne bathymétrie) 
- > - étude de la subsurface (stratégie d'outputs 3D adaptée)
- > - étude des incertitudes et de l'intrinsèque (plusieurs membres, 2 x 2 ans minimum)
- > - étude des trajectoires lagrangiennes de la glace de mer aux 2 pôles (sorties horaires des vitesses de dérive de la glace partout + pas dernière version SI3)
- > - étude des tourbillons et impact de la mésoéchelle (termes croisés calculés au pas de temps et sorties mensuelles)
- > - étude de l'impact des tourbillons sur le recul des zones englacées dans la zone marginale (?)
+ Une simulation globale à très haute résolution avec la marée pour accompagner la mission SWOT, préparatoire à la mission WaCM
+
+### Les études prévues avec la simulation au sein de l'IGE (et les spécifications associées) :
+
+ - Algorithmes de mapping zones cross-over SWOT (sorties 3D horaires dans ces régions + version barotrope du modèle)
+ - Etude de l'impact des tourbillons sur les transports de masse d'eau sur le plateau antartique (ouverture cavités Antartique + marée réaliste + bonne bathymétrie) 
+ - Etude de la subsurface (stratégie d'outputs 3D adaptée)
+ - Etude des incertitudes et de l'intrinsèque (plusieurs membres, 2 x 2 ans minimum)
+ - Etude des trajectoires lagrangiennes de la glace de mer aux 2 pôles (sorties horaires des vitesses de dérive de la glace partout + pas dernière version SI3)
+ - Etude des tourbillons et impact de la mésoéchelle (termes croisés calculés au pas de temps et sorties mensuelles)
+ - Etude de l'impact des tourbillons sur le recul des zones englacées dans la zone marginale (?)
 
 
 ## Set-up expérimental
 
 ORCA36 : configuration développée à Mercator Océan dans le cadre du projet IMMERSE : https://github.com/immerse-project/ORCA36-demonstrator/
 
-Quelques caractéristiques :
+### Quelques caractéristiques
+
   - 2-3km de résolution, 12960 x 10776 points de grille (= 3,5 x eNATL60)
   - tourne sur 18000 coeurs minimum, 50 000 coeurs  (cible)
   - estimation du coût : 3.5 MHCPU/an (ref : MareMostrum4 au BSC)
   - 1 champ 3D 75niveaux ~ 40 Gb (ref eNATL60 : 12GB)
 
 
-Les choix à faire :
+### Les choix à faire
 
-  - [x] version de NEMO : NEMO 4.2.0 
-  - [x] marées
+#### Les choix actés
+
+  - [x] version de NEMO : NEMO 4.2.0 (attention version/param SI3)
+  - [x] marée réaliste
+  - [x] ouverture cavités (mieux pour la marée et études antartiques)
+
+#### A tester et quantifier avant mise en place
+
+  - [ ] SAS et SI3 via OASIS
+  - [ ] stratégie outputs
  
-  
+#### Encore en discussion
+
 <details>
-<summary>run long ou ensemble ? </summary>
+<summary> run long ou ensemble ? </summary>
   
 Les options (POUR/CONTRE) :
   
    - un run le plus long possible (POUR : un seul run à gérer/ CONTRE : plus de chances de tomber sur un blocage, dérive par rapport bonne stratification)
-   - un spin-up + 2 membres (POUR : suffisant pour développer un spread / CONTRE : pas assez de membres
+   - un spin-up + 2 membres (POUR : suffisant pour développer un spread / CONTRE : pas assez de membres pour étude décohérences)
+   - un spin-up + x membres (POUR : mieux pour décohérences / CONTRE : complexité de la gestion des runs)
   
 </details>
 
-  - [ ] marée réaliste (quelles fréquences) ou centrées sur 12h, 24h pour mieux les filtrer ?
-  - [ ] ice shelves ?
-  - [ ] combien de niveaux verticaux 75 ou 150 ? 
-  - [ ] forçages atmosphériques ?
-  - [ ] paramètrisation ABL 1d ?
- 
-  ~~- [ ] runge-kutta ? pas prêt à temps pour le challenge~~
+<details>
+<summary> nombre de niveaux ? </summary>
+  
+Les options (POUR/CONTRE) :
+  
+   - 75 (POUR : taille des outputs/ CONTRE : pas suffisant pour les fines échelles par rapport à la résolution horizontale)
+   - 121 (POUR : bien adaptée pour glace antartique / CONTRE : )
+   - 150 (POUR: encore mieux pour les fines échelles / CONTRE : outputs 2X plus gros)
+  
+</details>
+
+<details>
+<summary> forçages atmosphériques </summary>
+  
+Les options (POUR/CONTRE) :
+  
+   - ERA5 (POUR : meilleure résolution / CONTRE : chocs à chaque analyses, flux des inputs trop gros pour l'instant)
+   - JRA55 (POUR : mieux connus / CONTRE : basse résolution)
+  
+</details>
+
 
 
 ## Plan d'archivage
