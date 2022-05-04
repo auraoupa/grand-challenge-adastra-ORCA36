@@ -38,13 +38,16 @@ Les choix à faire :
 
   - [x] version de NEMO : NEMO 4.2.0 
   - [x] marées
-  - [ ] 
+ 
   
 <details>
 <summary>run long ou ensemble ? </summary>
+  
 Les options (POUR/CONTRE) :
+  
    - un run le plus long possible (POUR : un seul run à gérer/ CONTRE : plus de chances de tomber sur un blocage, dérive par rapport bonne stratification)
    - un spin-up + 2 membres (POUR : suffisant pour développer un spread / CONTRE : pas assez de membres
+  
 </details>
 
   - [ ] marée réaliste (quelles fréquences) ou centrées sur 12h, 24h pour mieux les filtrer ?
