@@ -39,6 +39,8 @@ ORCA36 : configuration développée à Mercator Océan dans le cadre du projet I
 
 ### Les choix à faire
 
+La namelist du run de Mercator : https://raw.githubusercontent.com/immerse-project/ORCA36-demonstrator/main/NAMLST/namelist_cfg
+
 #### Les choix actés
 
   - [x] version de NEMO : NEMO 4.2.0 (attention version/param SI3)
@@ -50,7 +52,7 @@ ORCA36 : configuration développée à Mercator Océan dans le cadre du projet I
 #### Presque actés, à tester/quantifier avant mise en place
 
   - [ ] SAS et SI3 via OASIS
-  - [ ] GLS pour turbulence verticale
+  - [ ] GLS pour turbulence verticale (idem Mercator)
 <details>
 <summary> stratégie outputs </summary>
  
@@ -119,9 +121,9 @@ ORCA36 : configuration développée à Mercator Océan dans le cadre du projet I
 <details>
 <summary> Paramètres ? </summary>
  
-   - [ ] UBS pour momentum
-   - [ ] FCT pour traceurs 
-   - [ ] forçage pression atmosphérique
+   - [ ] UBS pour momentum (idem Mercator)
+   - [ ] FCT pour traceurs (idem Mercator ordre 4)
+   - [ ] forçage pression atmosphérique (idem Mercator, fichier ECWF horaire)
    - [ ] paramètres viscosité
    - [ ] QCO ? (=vvl dégradé)
   
