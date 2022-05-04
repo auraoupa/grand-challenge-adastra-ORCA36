@@ -139,3 +139,4 @@ La namelist du run de Mercator : https://raw.githubusercontent.com/immerse-proje
   -  [ ] quantifier stratégie outputs à la louche pour une première
   -  [ ] démarrer config toy dès que possible (test certaines fonctionnalités, quantification outputs)
   -  [ ] check branche xios/nemo pour lire forçages avec xios
+  -  [ ] commencer la rédaction de la demande d'heures
