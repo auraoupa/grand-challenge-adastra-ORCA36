@@ -88,7 +88,7 @@ ORCA36 : configuration développée à Mercator Océan dans le cadre du projet I
 </details>
 
 <details>
-<summary> forçages atmosphériques </summary>
+<summary> forçages atmosphériques ? </summary>
  
    - [ ] ERA5 (POUR : meilleure résolution / CONTRE : chocs à chaque analyses, flux des inputs trop gros pour l'instant)
    - [ ] JRA55 (POUR : mieux connus / CONTRE : basse résolution)
@@ -97,7 +97,7 @@ ORCA36 : configuration développée à Mercator Océan dans le cadre du projet I
 </details>
 
 <details>
-<summary> état initial </summary>
+<summary> état initial ? </summary>
  
    - [ ] restart simulation Clément Bricaud
    - [ ] réanalyse GLORYS12 (moyenne mensuelle)
@@ -107,17 +107,17 @@ ORCA36 : configuration développée à Mercator Océan dans le cadre du projet I
 
 
 <details>
-<summary> durée spin-up </summary>
+<summary> durée spin-up ? </summary>
  
    - [ ] 1 an
    - [ ] 2 ans
-   - [ ] x années
+   - [ ] x années (HYCOM 15 ans...)
   
 </details>
 
 
 <details>
-<summary> Paramètres </summary>
+<summary> Paramètres ? </summary>
  
    - [ ] UBS pour momentum
    - [ ] FCT pour traceurs 
