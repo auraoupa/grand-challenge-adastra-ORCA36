@@ -44,69 +44,96 @@ ORCA36 : configuration développée à Mercator Océan dans le cadre du projet I
   - [x] version de NEMO : NEMO 4.2.0 (attention version/param SI3)
   - [x] marée réaliste
   - [x] ouverture cavités (mieux pour la marée et études antartiques)
+  - [x] param Renault et al.
+  - [x] skin temperature Brodeau 
 
-#### A tester et quantifier avant mise en place
+#### Presque actés, à tester/quantifier avant mise en place
 
   - [ ] SAS et SI3 via OASIS
-  - [ ] stratégie outputs
+  - [ ] GLS pour turbulence verticale
+<details>
+<summary> stratégie outputs </summary>
  
+   - [ ] quelques sorties pendant le spin-up, le maximum possible pour les dernières années 
+   - [ ] sorties horaires de surface + certaines profondeurs (100m, 1000m)
+   - [ ] sorties journalières 3D
+   - [ ] sorties horaires 3D quelques régions cross-over
+   - [ ] sorties horaires sections, profils
+   - [ ] moyennes mensuelles termes croisés calculés au pas de temps
+   - pseudo-obs :
+     - [ ] ARGO
+     - [ ] traces satellite Nadir
+     - [ ] courantomètres
+  
+</details>
+
 #### Encore en discussion
 
 <details>
 <summary> run long ou ensemble ? </summary>
   
-Les options (POUR/CONTRE) :
-  
-   - un run le plus long possible (POUR : un seul run à gérer/ CONTRE : plus de chances de tomber sur un blocage, dérive par rapport bonne stratification)
-   - un spin-up + 2 membres (POUR : suffisant pour développer un spread / CONTRE : pas assez de membres pour étude décohérences)
-   - un spin-up + x membres (POUR : mieux pour décohérences / CONTRE : complexité de la gestion des runs)
+   - [ ] un run le plus long possible (POUR : un seul run à gérer/ CONTRE : plus de chances de tomber sur un blocage, dérive par rapport bonne stratification)
+   - [ ] un spin-up + 2 membres (POUR : suffisant pour développer un spread / CONTRE : pas assez de membres pour étude décohérences)
+   - [ ] un spin-up + x membres (POUR : mieux pour décohérences / CONTRE : complexité de la gestion des runs)
   
 </details>
 
 <details>
 <summary> nombre de niveaux ? </summary>
   
-Les options (POUR/CONTRE) :
-  
-   - 75 (POUR : taille des outputs/ CONTRE : pas suffisant pour les fines échelles par rapport à la résolution horizontale)
-   - 121 (POUR : bien adaptée pour glace antartique / CONTRE : )
-   - 150 (POUR: encore mieux pour les fines échelles / CONTRE : outputs 2X plus gros)
+   - [ ] 75 (POUR : taille des outputs/ CONTRE : pas suffisant pour les fines échelles par rapport à la résolution horizontale)
+   - [ ] 121 (POUR : bien adaptée pour glace antartique / CONTRE : )
+   - [ ] 150 (POUR: encore mieux pour les fines échelles, overflows / CONTRE : outputs 2X plus gros)
   
 </details>
 
 <details>
 <summary> forçages atmosphériques </summary>
+ 
+   - [ ] ERA5 (POUR : meilleure résolution / CONTRE : chocs à chaque analyses, flux des inputs trop gros pour l'instant)
+   - [ ] JRA55 (POUR : mieux connus / CONTRE : basse résolution)
+   - [ ] utilisation avec XIOS peut être une solution
   
-Les options (POUR/CONTRE) :
-  
-   - ERA5 (POUR : meilleure résolution / CONTRE : chocs à chaque analyses, flux des inputs trop gros pour l'instant)
-   - JRA55 (POUR : mieux connus / CONTRE : basse résolution)
+</details>
+
+<details>
+<summary> état initial </summary>
+ 
+   - [ ] restart simulation Clément Bricaud
+   - [ ] réanalyse GLORYS12 (moyenne mensuelle)
+   - [ ] état initial dans les cavités à construire (Pierre Mathiot)
   
 </details>
 
 
+<details>
+<summary> durée spin-up </summary>
+ 
+   - [ ] 1 an
+   - [ ] 2 ans
+   - [ ] x années
+  
+</details>
 
-## Plan d'archivage
 
-Stratégie d'outputs 3D horaires impossible.
-  - 3D horaire dans quelques régions ? lesquelles ?
-  - pseudo-obs :
-    - [ ] ARGO
-    - [ ] Nadir
-    - [ ] trajectoires lagrangiennes
-    - [ ] courantomètres
+<details>
+<summary> Paramètres </summary>
+ 
+   - [ ] UBS pour momentum
+   - [ ] FCT pour traceurs 
+   - [ ] forçage pression atmosphérique
+   - [ ] paramètres viscosité
+   - [ ] QCO ? (=vvl dégradé)
+  
+</details>
 
-Stockage long-terme au CINES, utilisation sur Data Terra ?
 
 ## Les actions
 
-Après [meeting du 20/04/2022](https://github.com/auraoupa/grand-challenge-adastra-ORCA36/blob/main/meetings/20220420.md) :
-
+  -  [ ] discuter avec Mercator (notre proposition, leur approche avec cette config, discussion de leurs choix de param)
   -  [ ] checker la bathy
-  -  [ ] outputs de glace Antartique simu Mercator
-  -  [ ] plus de questions scientifiques ?
-  -  [ ] discuter avec Camille et Claude pour la glace
-  -  [ ] discuter avec Mercator pour faire qq chose complémentaire
-  -  [ ] quantifier stratégie outputs
-  -  [ ] démarrer config toy dès que possible
+  -  [ ] récupérer outputs de la dernière simu Mercator 
+  -  [ ] discuter avec Camille et Claude pour paramètrisation glace arctique
+  -  [ ] quantifier stratégie outputs à la louche pour une première
+  -  [ ] démarrer config toy dès que possible (test certaines fonctionnalités, quantification outputs)
   -  [ ] check branche xios/nemo pour lire forçages avec xios
