@@ -8,6 +8,20 @@ Date de soumission du projet : été 2022
 
 Date de réalisation de la simulation : entre octobre 2022 et avril 2023 (peut être décalé de 3-5 mois cf GENCI)
 
+## Argumentaire scientifique
+
+  - pour la demande auprès de GENCI :
+ > Une simulation globale à très haute résolution avec la marée pour accompagner la mission SWOT, préparatoire à la mission WaCM
+
+  - ce qui va être étudié avec la simulation au sein de l'IGE (et les spécifications associées) :
+ > - algorithmes de mapping zones cross-over SWOT (sorties 3D horaires dans ces régions + version barotrope du modèle)
+ > - étude de l'impact des tourbillons sur les transports de masse d'eau sur le plateau antartique (ouverture cavités Antartique + marée réaliste + bonne bathymétrie) 
+ > - étude de la subsurface (stratégie d'outputs 3D adaptée)
+ > - étude des incertitudes et de l'intrinsèque (plusieurs membres, 2 x 2 ans minimum)
+ > - étude des trajectoires lagrangiennes de la glace de mer aux 2 pôles (sorties horaires des vitesses de dérive de la glace partout + pas dernière version SI3)
+ > - étude des tourbillons et impact de la mésoéchelle (termes croisés calculés au pas de temps et sorties mensuelles)
+ > - étude de l'impact des tourbillons sur le recul des zones englacées dans la zone marginale (?)
+
 
 ## Set-up expérimental
 
@@ -24,11 +38,13 @@ Les choix à faire :
 
   - [x] version de NEMO : NEMO 4.2.0 
   - [x] marées
-  - [ ] <details>
+  - [ ] 
+  
+<details>
 <summary>run long ou ensemble ? </summary>
-```
-CODE!
-```
+Les options (POUR/CONTRE) :
+   - un run le plus long possible (POUR : un seul run à gérer/ CONTRE : plus de chances de tomber sur un blocage, dérive par rapport bonne stratification)
+   - un spin-up + 2 membres (POUR : suffisant pour développer un spread / CONTRE : pas assez de membres
 </details>
 
   - [ ] marée réaliste (quelles fréquences) ou centrées sur 12h, 24h pour mieux les filtrer ?
@@ -38,20 +54,6 @@ CODE!
   - [ ] paramètrisation ABL 1d ?
  
   ~~- [ ] runge-kutta ? pas prêt à temps pour le challenge~~
-
-## Argumentaire scientifique
-
-  - pour la demande auprès de GENCI :
- > Une simulation globale à très haute résolution avec la marée pour accompagner la mission SWOT, préparatoire à la mission WaCM
-
-  - ce qui va être étudié avec la simulation au sein de l'IGE (et les spécifications associées) :
- > - algorithmes de mapping zones cross-over SWOT (sorties 3D horaires dans ces régions + version barotrope du modèle)
- > - étude de l'impact des tourbillons sur les transports de masse d'eau sur le plateau antartique (ouverture cavités Antartique + marée réaliste + bonne bathymétrie) 
- > - étude de la subsurface (stratégie d'outputs 3D adaptée)
- > - étude des incertitudes et de l'intrinsèque (plusieurs membres, 2 x 2 ans minimum)
- > - étude des trajectoires lagrangiennes de la glace de mer aux 2 pôles (sorties horaires des vitesses de dérive de la glace partout + pas dernière version SI3)
- > - étude des tourbillons et impact de la mésoéchelle (termes croisés calculés au pas de temps et sorties mensuelles)
- > - étude de l'impact des tourbillons sur le recul des zones englacées dans la zone marginale (?)
 
 
 ## Plan d'archivage
