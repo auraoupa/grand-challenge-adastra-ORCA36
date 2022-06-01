@@ -7,3 +7,8 @@ In the world of NEMO, the 1/2 degree global configuration is ORCA05.L31. For the
 
 ## Building eORCA05
 ### Horizontal grid : from ORCA05 to eORCA05
+We start from eORCA025 grid and figure out how ORCA05 points matches  eORCA025  points.  We found that T point ORCA05(3,256) is located as T points eORCA025(5,697).
+In the same manner, for instance, we found that U point ORCA05(3,256) = T points eORCA025(6,297), etc ..
+The program [mkorca05.f90](BUILD/HGR/mkorca05.f90) was written in order to create the eORCA05 grid, and in particular its southern extension, using  the matching points.
+After determining the location of T U V F points in the eORCA05 grid, e1 and e2 metrics was calculated using orthodromic distance between *ad hoc* points. Finally, we 
+patch the eORCA05 grid with original ORCA05 grid north of J=79.  This program ends up creating the file `eORCA05_coordinates.nc`.
