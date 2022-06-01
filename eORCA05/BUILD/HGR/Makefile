@@ -1,3 +1,6 @@
+# Makefile for jean-zay
+# should be ported to other machine. Introduce include make.macro ???
+
 FFLAGS = -O -CB -g -traceback -lnetcdf -lnetcdff
 
 all: mkorca05 mkbathy05
