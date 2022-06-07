@@ -21,14 +21,14 @@
    !                       !      
    cp_cfg      =  "orca"   !  name of the configuration
    jp_cfg      =     12    !  resolution of the configuration
-   jpidta      =    1442   !  1st lateral dimension ( >= jpi )
-   jpjdta      =    1207   !  2nd    "         "    ( >= jpj )
+   jpidta      =    722   !  1st lateral dimension ( >= jpi )
+   jpjdta      =    604   !  2nd    "         "    ( >= jpj )
    jpkdta      =      75   !  number of levels      ( >= jpk )
-   jpiglo      =    1442   !  1st dimension of global domain --> i =jpidta
-   jpjglo      =    1207   !  2nd    -                  -    --> j  =jpjdta
+   jpiglo      =    722   !  1st dimension of global domain --> i =jpidta
+   jpjglo      =    604   !  2nd    -                  -    --> j  =jpjdta
    jpizoom     =       1   !  left bottom (i,j) indices of the zoom
    jpjzoom     =       1   !  in data domain indices
-   jperio      =       4   !  lateral cond. type (between 0 and 6)
+   jperio      =       6   !  lateral cond. type (between 0 and 6)
 /
 !-----------------------------------------------------------------------
 &namzgr        !   vertical coordinate
@@ -267,8 +267,8 @@
    nn_buffer   =   0       !  size in bytes of exported buffer ('B' case), 0 no exportation
    ln_nnogather=  .false.  !  activate code to avoid mpi_allgather use at the northfold
    jpni        =   1       !  jpni   number of processors following i (set automatically if < 1)
-   jpnj        =  80       !  jpnj   number of processors following j (set automatically if < 1)
-   jpnij       =  80       !  jpnij  number of local domains (set automatically if < 1)
+   jpnj        =  40       !  jpnj   number of processors following j (set automatically if < 1)
+   jpnij       =  40       !  jpnij  number of local domains (set automatically if < 1)
 /
 !-----------------------------------------------------------------------
 &namctl        !   Control prints & Benchmark
