@@ -65,10 +65,17 @@ adjusting `jpni, jpnj` and `jpnij`.
    ./dcmtk_dom_doc.exe  -b eORCA05_bathymetry_b0.2_closed_seas.n -c eORCA05_coordinates.nc  -n namelist_cfg -d domain_cfg.nc
    ```
 
+ 6. Transform domain_cfg file into netcdf4 with compression :
+
+    ```
+    ncks -4 -L 1 --cnk_dmn z,1 domain_cfg.nc domain_cfg.nc4
+    ```
+
+
  7. Move the final file to the `eORCA025.L121-I` directory:
 
    ```
-   mv domain_cfg.nc $WORK/eORCA05.L121/eORCA05.L121-I/eORCA025.L121_domain_cfg.nc
+   mv domain_cfg.nc4  $WORK/eORCA05.L121/eORCA05.L121-I/eORCA025.L121_domain_cfg.nc
    ```
 
  8. **YOU ARE DONE !**
