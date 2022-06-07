@@ -1,0 +1,42 @@
+!-----------------------------------------------------------------------                                                                                                  
+&namdom        !   space and time domain (bathymetry, mesh, timestep)                                                                                                     
+!-----------------------------------------------------------------------                                                                                                  
+   cn_fcoord   =  'eORCA025_coord_c3.0.nc'     ! external coordinates file (jphgr_msh = 0)                                                                                
+   cn_topo     =  'eORCA025_bathymetry_b0.2.nc'! external topo file (nn_bathy =1/2)                                                                                       
+   cn_fisfd    =  'eORCA025_bathymetry_b0.2.nc'! external isf draft (nn_bathy =1 and ln_isfcav = .true.)                                                                  
+   cn_bath     =  'Bathymetry_isf'             ! topo name in file  (nn_bathy =1/2)                                                                                       
+   cn_visfd    =  'isf_draft'                  ! isf draft variable (nn_bathy =1 and ln_isfcav = .true.)                                                                  
+   cn_lon      =  'nav_lon'                    ! lon  name in file  (nn_bathy =2)                                                                                         
+   cn_lat      =  'nav_lat'                    ! lat  name in file  (nn_bathy =2)                                                                                         
+   nn_msh      =    1      !  create (=1) a mesh file or not (=0)                                                                                                         
+   rn_hmin     =   10.     !  min depth of the ocean (>0) or min number of ocean level (<0)                                                                               
+   rn_e3zps_min=   25.     !  partial step thickness is set larger than the minimum of                                                                                    
+   rn_e3zps_rat=    0.2    !  rn_e3zps_min and rn_e3zps_rat*e3t, with 0<rn_e3zps_rat<1                                                                                    
+                           !                                                                                                                                              
+   rn_rdt      = 5760.     !  time step for the dynamics (and tracer if nn_acc=0)                                                                                         
+   rn_atfp     =    0.1    !  asselin time filter parameter                                                                                                               
+   ln_crs      = .false.      !  Logical switch for coarsening module                                                                                                     
+   jphgr_msh   =       0               !  type of horizontal mesh                                                                                                         
+                                       !  = 0 curvilinear coordinate on the sphere read in coordinate.nc                                                                  
+                                       !  = 1 geographical mesh on the sphere with regular grid-spacing                                                                   
+                                       !  = 2 f-plane with regular grid-spacing                                                                                           
+                                       !  = 3 beta-plane with regular grid-spacing                                                                                        
+                                       !  = 4 Mercator grid with T/U point at the equator                                                                                 
+                                       !                                                                                                                                  
+! From discussion with N.J. (resolution about 10-20 m in the ISF depth range):                                                                                            
+ ppsur  = -9010.587848403375                                                                                                                                              
+ ppa0   =   106.31862889828116                                                                                                                                            
+ ppa1   =     7.952358497085131                                                                                                                                           
+ ppa2   =    97.73124662753601                                                                                                                                            
+                                                                                                                                                                          
+ ppkth  =    22.180677730800767                                                                                                                                           
+ ppacr  =    11.02538019814476                                                                                                                                            
+                                                                                                                                                                          
+ ppkth2 =   100.00000000000                                                                                                                                               
+ ppacr2 =    13.00000000000                                                                                                                                               
+                                                                                                                                                                          
+ ppdzmin     =  999999.0             !  Minimum vertical spacing                                                                                                          
+ pphmax      =  999999.0             !  Maximum depth                                                                                                                     
+ ldbletanh   =    .TRUE.             !  Use/do not use double tanf function for vertical coordinates                                                                      
+/ 
+
