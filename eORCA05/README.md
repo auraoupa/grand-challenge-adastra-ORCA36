@@ -30,9 +30,15 @@ Having now both the coordinates, and the bathymetry for the eORCA05 horizontal g
 settings that were used for eORCA025.L75 (see the procedure in [this document](BUILD/DOMAIN_cfg/README.md) ).  We end up with the file `eORCA05.L75_domain_cfg.nc`.  
 For the 121-levels grid, namdom namelist should be changed for the new coeffcients.
 
+### Creating the mesh_mask file. 
+It is convenient to have the configuration mesh_mask file early in the configuration building process. The easiest way to have it is to run nemo for the initialisation part using domain_cfg file,
+some namelists and xml files. The job will failed, for sure for missing initial conditions, but the fail arrived after the mesh_mask file is written ! A good practice for this creation is to
+use a domain decomposition of 1 x jpni so that no land processors are eliminated, hence producing a mesh_mask file without holes.  `rebuild_nemo` program is used to recombine the global mesh_mask file.
+
 ### Creating Initial conditions for T and S, as well as the restoring T and S: (Potential temperature and Relative salinity).
-We choose the same WOA18 data set that was used for eORCA025.L75 (30 yrs climatology, 1980-2010), and the same `SOSIE` procedure. So, all the sosie namelist used with eORCA025.L75 were adapted to eORCA05.L75.
+We choose the same WOA18 data set that was used for eORCA025.L75 (30 yrs climatology, 1980-2010), and the same `SOSIE` procedure. So, all the sosie namelist used with eORCA025.L75 were adapted to eORCA05.L75.  
 The adaptation only consists in changing the name of the mesh_mask.nc file. The output files produced by SOSIE were reformatted to a NEMO standard, using the 
 [mknemolike.sh](BUILD/INITIAL_COND/mknemolike.sh) script. This latter operation is basically  dedicated to renaming the netcdf file dimensions, and coordinates 
 variables. The process ends up producing  `eORCA05.L75_81B0_WOA18_1m_votemper.nc` and `eORCA05.L75_81B0_WOA18_1m_vosaline.nc`.  
-As we will use TEOS10 equation of state, potential temperatures should be transformed to conservative temperature (CT) and relative salinity should be transformed to absolute salinity (SA).
+As we will use TEOS10 equation of state, potential temperatures should be transformed to conservative temperature (CT) and relative salinity should be transformed to absolute salinity (SA). 
+This last point is achieved using [mk_teos10.sh](BUILD/INITIAL_COND/mk_teos10.sh)  script. Finally, Sea Surface Salinity fields are extacted from the 3D files, using [mk_sss.sh](BUILD/INITIAL_COND/mk_sss.sh)
