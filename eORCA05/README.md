@@ -30,9 +30,13 @@ settings that were used for eORCA025.L75 (see the procedure in [this document](B
 For the 121-levels grid, namdom namelist should be changed for the new coeffcients.
 
 ### Creating the mesh_mask file. 
-It is convenient to have the configuration mesh_mask file early in the configuration building process. The easiest way to have it is to run nemo for the initialisation part using domain_cfg file,
-some namelists and xml files. The job will failed, for sure for missing initial conditions, but the fail arrived after the mesh_mask file is written ! A good practice for this creation is to
-use a domain decomposition of 1 x jpni so that no land processors are eliminated, hence producing a mesh_mask file without holes.  `rebuild_nemo` program is used to recombine the global mesh_mask file.
+It is convenient to have the configuration mesh_mask file early in the configuration building process. 
+The easiest way to have it is to run nemo for the initialisation part using domain_cfg file,
+some namelists and xml files. The job will failed, for sure for missing initial conditions, 
+but the fail arrives after the mesh_mask file is written ! A good practice for this creation is to
+use a domain decomposition of 1 x jpni so that no land processors are eliminated, hence producing a 
+mesh_mask file without holes.  `rebuild_nemo` program is used to recombine the global mesh_mask file.  
+the [mk_mesh_mask.sh](BUILD/MESH_MASK/mk_mesh_mask.sh) script was used for this creation. 
 
 ### Creating Initial conditions for T and S, as well as the restoring T and S: (Potential temperature and Relative salinity).
 We choose the same WOA18 data set that was used for eORCA025.L75 (30 yrs climatology, 1980-2010), and the same `SOSIE` procedure. So, all the sosie namelist used with eORCA025.L75 were adapted to eORCA05.L75.  

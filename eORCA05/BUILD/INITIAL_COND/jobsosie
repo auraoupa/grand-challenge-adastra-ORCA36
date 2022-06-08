@@ -1,0 +1,19 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --threads-per-core=1
+#SBATCH -A cli@cpu
+#SBATCH -J JOB_sosie3
+#SBATCH -e zjob.e%j
+#SBATCH -o zjob.o%j
+#SBATCH --time=2:00:00
+
+
+
+cd /gpfswork/rech/cli/rcli002/eORCA05.L121/eORCA05.L121-I/INIIAL_CONDITION_eORCA05.L121_build
+
+./sosie3.x -f namelist_san_1deg.L121
+./sosie3.x -f namelist_tan_1deg.L121
+./sosie3.x -f namelist_theta_1deg.L121
+
+./mknemolike.sh
