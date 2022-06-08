@@ -28,7 +28,7 @@ The program [mkbathy05.f90](BUILD/HGR/mkbathy05.f90) was build for this purpose.
 the eORCA05 bathymetry coming out from this process, was patched with the original ORCA05 bathymetry, 
 north of J=79. This program ends up creating the `eORCA05_bathymetry_b0.2_closed_seas.nc`
 
-### Creating the domain_cfg file.
+### [Creating the domain_cfg file.](BUILD/DOMAIN_cfg/README.md)
 In this file, the vertical grid is defined. The two actual candidates for vertical grid are either 
 the standard DRAKKAR 75-levels grid or the 121-levels grid  developped and tested by Pierre Mathiot 
 in an eORCA025 configuration.  As an exercize  both vertical grid will be prepared.  
@@ -57,3 +57,39 @@ As we will use TEOS10 equation of state, potential temperatures should be transf
 temperature (CT) and relative salinity should be transformed to absolute salinity (SA).   
 This last point is achieved using [mk_teos10.sh](BUILD/INITIAL_COND/mk_teos10.sh)  script.    
 Finally, Sea Surface Salinity fields are extacted from the 3D files, using [mk_sss.sh](BUILD/INITIAL_COND/mk_sss.sh)
+
+> Many additional files are required for running a realistic simulation: Forcing files of various type, including 
+> atmospheric files and associated weight files, continental fresh water input files such as  runoff files, calving 
+> and iceshelves melting files. If we use geothermal heating we also need data file and respective weight file 
+> for that.  Information of the chlorophyl concentration is also used for light penetration scheme associated 
+> with solar radiative flux. In addition, the simulation requires specific setting files  for defining T/S 
+> restoring, enhanced bottom friction, enhanced lateral friction as well as files giving an appropriate 
+> information about the distance to the coast used in the SSS restoring procedure.  Following paragraphs 
+> are dedicated to the building of these files.
+
+### Weight files:
+Weight files are used in NEMO as far as the 'interpolation on the fly (IOF)' is concerned. This procedure can be
+used when input files correspond to a regular geographic grid. Resulting interpolation can be either bilinear or
+bicubic. In general, bilinear interpolation is used, except for wind components where bicubic interpolation is 
+preferred. If fact, the curl of the wind stress is a relevant variable in the wind forcing; using bicubic interpolation
+allows to have continuous first derivative (hence the curl).   
+Weight files are computed with the `WEIGHT TOOL` following [this procedure](BUILD/WEIGHT/README.md).  
+This tool is using only grid information: input regular grid and output NEMO grid (likely irregular).  
+The weights are used for atmospheric forcing, geothermal forcing and chlorophyl concentration used in for the light 
+penetration scheme. 
+
+### Runoff file
+
+### Calving file
+
+### Ice shelve melting file
+
+### Restoring file
+
+### Bottom friction file
+
+### Lateral friction file (AKA shlat2d files)
+
+### distance to coast file.
+
+
