@@ -140,3 +140,4 @@ La namelist du run de Mercator : https://raw.githubusercontent.com/immerse-proje
   -  [ ] démarrer config toy dès que possible (test certaines fonctionnalités, quantification outputs)
   -  [ ] check branche xios/nemo pour lire forçages avec xios
   -  [ ] commencer la rédaction de la demande d'heures : [modèle formulaire GPU](https://docs.google.com/document/d/1hfe0EdBwWCY52-W0kdYwhFOb29nzBpP7jlnIukLYfNE/edit?usp=sharing)
+  -  [ ] [Cr�ation d'une maquette avec eORCA05:](eORCA05/README.md)

@@ -25,7 +25,6 @@ the eORCA05 bathymetry coming out from this process, was patched with the origin
 ### Creating the domain_cfg file.
 In this file, the vertical grid is defined. The two actual candidates for vertical grid are either the standard DRAKKAR 75-levels grid or the 121-levels grid  developped and tested by Pierre Mathiot in an eORCA025 configuration.  
 As an exercize (?) both vertical grid will be prepared.  
-*TO BE DONE*  
 Having now both the coordinates, and the bathymetry for the eORCA05 horizontal grid, we were able to compute the `domain_cfg.nc` file using exactly the same
 settings that were used for eORCA025.L75 (see the procedure in [this document](BUILD/DOMAIN_cfg/README.md) ).  We end up with the file `eORCA05.L75_domain_cfg.nc`.  
 For the 121-levels grid, namdom namelist should be changed for the new coeffcients.
