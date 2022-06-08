@@ -12,11 +12,11 @@
 #SBATCH --time=0:30:00
 #SBATCH --exclusive
 
-CONFIG=eORCA05.L75
+CONFIG=eORCA05.L121
 ulimit -s unlimited
 PERIOD=81B0
 
-cd /gpfswork/rech/cli/rcli002/${CONFIG}/${CONFIG}-I/INITIAL_COND_build
+cd $WORK/$CONFIG/${CONFIG}-I/INIIAL_CONDITION_${CONFIG}_build
 
 # rename file to their final name 
 for var in vosaline votemper t_an; do
