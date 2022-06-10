@@ -67,7 +67,7 @@ Finally, Sea Surface Salinity fields are extacted from the 3D files, using [mk_s
 > information about the distance to the coast used in the SSS restoring procedure.  Following paragraphs 
 > are dedicated to the building of these files.
 
-### Weight files:
+### [Weight files:](BUILD/WEIGHT/README.md)
 Weight files are used in NEMO as far as the 'interpolation on the fly (IOF)' is concerned. This procedure can be
 used when input files correspond to a regular geographic grid. Resulting interpolation can be either bilinear or
 bicubic. In general, bilinear interpolation is used, except for wind components where bicubic interpolation is 
@@ -90,6 +90,17 @@ penetration scheme.
 
 ### Lateral friction file (AKA shlat2d files)
 
-### distance to coast file.
+### [Distance to coast file.](BUILD/DISTCOAST/README.md)
+Distance to the coast file is used for SSS restoring, when using DCM and `ln_sssr_msk =.true.` in the NEMO namelist.
+It is used in conjonction with namelist parameter `rn_dist` which fix the width of a stripe along the coast where the SSS
+restoring will be faded out. This idea came out from the fact that SSS climatology used for restoring is a very smoothed field
+where coastal current are not resolved and even less, fresh water plumes formed by river runoff. Therefore, using this feature
+allows the model to build its own (narrow) coastal currents driving eventually fresher waters.   
+Once said that, the building of the distcoast file should be handle with care, in particular with regard to the 
+islands (small) that may be not taken into account when building the discoast file, as they may prevent SSS 
+restoring in large areas of the ocean, in key regions such as the indonesian through flow (where the SSS restoring 
+is crucial to balance the uncertainties on the precip in this region).   
+The building of discoast file is likely an iterative process, using 
+[cdfcofdis](https://github.com:meom-group/CDFTOOLS/src/cdfcofdis.f90) CDFTOOLS.  A recent improvement in this tools, allows the use of a runoff file as input file.
 
 
