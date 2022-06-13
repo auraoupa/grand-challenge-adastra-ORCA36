@@ -84,7 +84,10 @@ penetration scheme.
 
 ### Ice shelve melting file
 
-### Restoring file
+### [Restoring file](BUILD/RESTORING/README.md)
+Restoring file is used for 3D T/S restoring. This file gives a restoring coefficient (s-1) which is read
+in the tradmp_init procedure.  
+In order to create this file, see this corresponding [document](BUILD/RESTORING/README.md].
 
 ### Bottom friction file
 
