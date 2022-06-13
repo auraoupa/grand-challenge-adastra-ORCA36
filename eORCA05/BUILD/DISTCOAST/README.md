@@ -25,7 +25,7 @@ mask | runoff
 On these figures, the colors are saturated for distances greater than 500 km. Main differences come from islands or archipelagoes without runoff 
 (South Orkneys islands, Kerguelen Island, Faroes Island ... ).    
 Apart from these islands, we also notice that semi enclosed seas (Med Sea, Black Sea, Red Sea etc ...), due to their reduced size, can be almost ignored by the SSS
-restoring. In fact, atmospheric precip are not very much trusted on these region and SSS restoring may avoid spurious drift in these regions. Therefore, local
+restoring. In fact, atmospheric precip are not very much trusted on these regions and SSS restoring may avoid spurious drift in there. Therefore, local
 modifications must be done on the files, for instance by artificially increasing the value of the distance.  As an example, we will set all Med Sea, Black Sea Red Sea distances to a very high value (says 5000 km) to prevent SSS fading off on these areas. This can be done using `cdfvar`:
 
 ```
@@ -50,3 +50,15 @@ according to SSS analysis for a given configuration on can iterate on this file 
 
 ## An alternative:
 Instead of correcting the resulting distcoast file, one may work with a modified tmask, for instance eliminating the islands from the mask.
+Modification of the surface tmask can be achieved with BMGTOOLS (which requires some work on the input files in order to make them compliant
+with the tool:
+  * data file must be x,y only (noz, no time).
+  * variable to edit should be named `Bathymetry`, and should **NOT** be of `byte` type.
+
+On the following picture, the modified surface tmask is shown. Small islands have been suppressed. Big differences in the Indonesian Throughflow area.
+
+![](Modified_tmask.png)
+
+The resulting distoast file is shown on the next figure :
+
+![](distcoast_modif.png)
