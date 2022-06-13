@@ -89,7 +89,7 @@ Restoring file is used for 3D T/S restoring. This file gives a restoring coeffic
 in the tradmp_init procedure.  
 In order to create this file, see this corresponding [document](BUILD/RESTORING/README.md].
 
-### Bottom friction file
+### [Bottom friction file](BUILD/BFR2D/README.md)
 
 ### Lateral friction file (AKA shlat2d files)
 
