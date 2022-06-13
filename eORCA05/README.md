@@ -114,6 +114,6 @@ islands (small) that may be not taken into account when building the discoast fi
 restoring in large areas of the ocean, in key regions such as the indonesian through flow (where the SSS restoring 
 is crucial to balance the uncertainties on the precip in this region).   
 The building of discoast file is likely an iterative process, using 
-[cdfcofdis](https://github.com:meom-group/CDFTOOLS/src/cdfcofdis.f90) CDFTOOLS.  A recent improvement in this tools, allows the use of a runoff file as input file.
+[cdfcofdis](https://github.com/meom-group/CDFTOOLS/blob/master/src/cdfcofdis.f90) CDFTOOLS.  A recent improvement in this tools, allows the use of a runoff file as input file.
 
 
