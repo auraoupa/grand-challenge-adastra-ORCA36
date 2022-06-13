@@ -22,6 +22,7 @@ $WORK/WeORCA05.L121-GD2022/tools/WEIGHTS directory.
 ## Computing the weight files:
 In the WEIGHTS directory, `mkweight.sh` is used for that, together with a skeleton of namelist (`namelist.skel`).   
 In order to make the weight files you need to have a description of the input regular grid and out the output NEMO grid. The best way is to have in WEIGHTS, a link to one regular file and a link to either a mesh_mask file or a domain_cfg file.  
+### atmospheric forcing:
 For the example I have :
 
    ```
@@ -46,5 +47,20 @@ following script will create the weight files:
 This will produce respectively `wght_bilinear_eORCA05.L121_domain_cfg.nc` and `wght_bicubic_eORCA05.L121_domain_cfg.nc`.  It is likely a good idea to rename this file like `wght_JRA55-eORCA05_bilin.nc` and
 `wght_JRA55-eORCA05_bicub.nc`, in order to keep track of the 2 grids.
 
+### Geothermal heating
+  The same procedure is used with input data file `ghflux_v2.0.nc`. (lon lat are OK).
+
+  ```
+   ./mkweight.sh -c eORCA05.L121_domain_cfg.nc -M ghflux_v2.0.nc  -m bilinear 
+   mv wght_bilinear_eORCA05.L121_domain_cfg.nc wght_ghflux_eORCA05_bilin.nc
+  ```
+
+### Chlorophyl concentration
+  The same procedure is used with input data file `chlorophyl_v0.0.nc`. (lon lat are OK).
+
+  ```
+   ./mkweight.sh -c eORCA05.L121_domain_cfg.nc -M  chlorophyl_v0.0.nc -m bilinear 
+   mv wght_bilinear_eORCA05.L121_domain_cfg.nc wght_chlorophyl_eORCA05_bilin.nc
+  ```
 
 

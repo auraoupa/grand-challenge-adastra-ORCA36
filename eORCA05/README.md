@@ -76,7 +76,7 @@ allows to have continuous first derivative (hence the curl).
 Weight files are computed with the `WEIGHT TOOL` following [this procedure](BUILD/WEIGHT/README.md).  
 This tool is using only grid information: input regular grid and output NEMO grid (likely irregular).  
 The weights are used for atmospheric forcing, geothermal forcing and chlorophyl concentration used in for the light 
-penetration scheme. 
+penetration scheme.  
 
 ### Runoff file
 
