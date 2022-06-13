@@ -87,11 +87,21 @@ penetration scheme.
 ### [Restoring file](BUILD/RESTORING/README.md)
 Restoring file is used for 3D T/S restoring. This file gives a restoring coefficient (s-1) which is read
 in the tradmp_init procedure.  
-In order to create this file, see this corresponding [document](BUILD/RESTORING/README.md].
+In order to create this file, see this corresponding [document](BUILD/RESTORING/README.md).
 
 ### [Bottom friction file](BUILD/BFR2D/README.md)
+Bottom friction is locally boosted for limiting the flow through narrow straits, not correctly resolved by the
+model grid. Bottom friction file is a mask-like file defining the places where bottom friction is boosted.  
+In order to create this file, see this corresponding [document](BUILD/BFR2D/README.md).
 
-### Lateral friction file (AKA shlat2d files)
+
+### [Lateral friction file (AKA shlat2d files)](BUILD/SHLAT2D/README.md)
+Lateral boundary conditions(typically free-slip or no-slip) are set in standard NEMO as a unique coefficient (`shlat`).
+`shlat=0` define a free-slip condition (tangent velocity to the coast line doest not feel the coast), wether `shlat=2` define
+a non-slip condition (tangent velocity is 0 at the coast line). In fact, `shlat` can be in the range [0-2] for partial slip
+condition, and even > 2 for strong slip condition.  
+DCM allows for a spatially variable `shlat`, defined in an external file, whose construction is the topic of this paragraph.  
+In order to create this file, see this corresponding [document](BUILD/SHLAT2D/README.md).
 
 ### [Distance to coast file.](BUILD/DISTCOAST/README.md)
 Distance to the coast file is used for SSS restoring, when using DCM and `ln_sssr_msk =.true.` in the NEMO namelist.
