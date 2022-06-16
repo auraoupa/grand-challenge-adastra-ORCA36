@@ -138,5 +138,5 @@ La [namelist du run de Mercator](https://raw.githubusercontent.com/immerse-proje
   -  [ ] discuter avec Camille et Claude pour paramétrisation glace arctique
   -  [ ] quantifier stratégie outputs à la louche 
   -  [ ] check branche xios/nemo pour lire forçages avec xios
-  -  [ ] commencer la rédaction de la demande d'heures : en cours [ici]([https://docs.google.com/document/d/1hfe0EdBwWCY52-W0kdYwhFOb29nzBpP7jlnIukLYfNE/edit?usp=sharing](https://github.com/auraoupa/grand-challenge-adastra-ORCA36/blob/main/projet-DARI/projet-grand-challenge-CPU.md) 
+  -  [ ] commencer la rédaction de la demande d'heures : en cours [ici](https://github.com/auraoupa/grand-challenge-adastra-ORCA36/blob/main/projet-DARI/projet-grand-challenge-CPU.md) 
   -  [ ] [Création d'une maquette avec eORCA05](eORCA05/README.md) : en cours
