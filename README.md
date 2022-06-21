@@ -27,7 +27,7 @@ Date de réalisation de la simulation : entre octobre 2022 et avril 2023 (peut �
 
 ## Set-up expérimental
 
-ORCA36 : configuration développée à Mercator Océan dans le cadre du projet IMMERSE : https://github.com/immerse-project/ORCA36-demonstrator/
+ORCA36 : configuration développée à Mercator Océan dans le cadre du projet IMMERSE : https://github.com/immerse-project/ORCA36-demonstrator/
 
 ### Quelques caractéristiques
 
@@ -39,7 +39,7 @@ ORCA36 : configuration développée à Mercator Océan dans le cadre du projet I
 
 ### Les choix à faire
 
-La namelist du run de Mercator : https://raw.githubusercontent.com/immerse-project/ORCA36-demonstrator/main/NAMLST/namelist_cfg
+La [namelist du run de Mercator](https://raw.githubusercontent.com/immerse-project/ORCA36-demonstrator/main/NAMLST/namelist_cfg)
 
 #### Les choix actés
 
@@ -92,14 +92,14 @@ La namelist du run de Mercator : https://raw.githubusercontent.com/immerse-proje
 <details>
 <summary> forçages atmosphériques ? </summary>
  
-   - [ ] ERA5 (POUR : meilleure résolution / CONTRE : chocs à chaque analyses, flux des inputs trop gros pour l'instant)
+   - [ ] ERA5 (POUR : meilleure résolution / CONTRE : chocs à chaque analyse, flux des inputs trop gros pour l'instant)
    - [ ] JRA55 (POUR : mieux connus / CONTRE : basse résolution)
    - [ ] utilisation avec XIOS peut être une solution
   
 </details>
 
 <details>
-<summary> état initial ? </summary>
+<summary> Etat initial ? </summary>
  
    - [ ] restart simulation Clément Bricaud
    - [ ] réanalyse GLORYS12 (moyenne mensuelle)
@@ -135,9 +135,8 @@ La namelist du run de Mercator : https://raw.githubusercontent.com/immerse-proje
   -  [ ] discuter avec Mercator (notre proposition, leur approche avec cette config, discussion de leurs choix de param)
   -  [ ] checker la bathy
   -  [ ] récupérer outputs de la dernière simu Mercator 
-  -  [ ] discuter avec Camille et Claude pour paramètrisation glace arctique
-  -  [ ] quantifier stratégie outputs à la louche pour une première
-  -  [ ] démarrer config toy dès que possible (test certaines fonctionnalités, quantification outputs)
+  -  [ ] discuter avec Camille et Claude pour paramétrisation glace arctique
+  -  [ ] quantifier stratégie outputs à la louche 
   -  [ ] check branche xios/nemo pour lire forçages avec xios
-  -  [ ] commencer la rédaction de la demande d'heures : [modèle formulaire GPU](https://docs.google.com/document/d/1hfe0EdBwWCY52-W0kdYwhFOb29nzBpP7jlnIukLYfNE/edit?usp=sharing)
-  -  [ ] [Cr�ation d'une maquette avec eORCA05:](eORCA05/README.md)
+  -  [ ] commencer la rédaction de la demande d'heures : en cours [ici](https://github.com/auraoupa/grand-challenge-adastra-ORCA36/blob/main/projet-DARI/projet-grand-challenge-CPU.md) 
+  -  [ ] [Création d'une maquette avec eORCA05](eORCA05/README.md) : en cours
