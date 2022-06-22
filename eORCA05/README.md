@@ -78,11 +78,25 @@ This tool is using only grid information: input regular grid and output NEMO gri
 The weights are used for atmospheric forcing, geothermal forcing and chlorophyl concentration used in for the light 
 penetration scheme.  
 
-### Runoff file
+### [Runoff file](BUILD/RUNOFF/README.md)
+Runoff file is used for specifying the location and the fresh water fluxes corresponding to rivers flooding into the ocean.
+In addition, this file have a 2D variable `socoefr` taking the value 0.5 where a grid point correspond to some runoff and 0
+elsewhere. This variable is used to prevent SSS restoring at runoff points (Standard NEMO). In DCM, we implement a stronger
+control for SSS restoring, using the information of the distance to the coast (see below).  
+In order to create this file, see this corresponding [document](BUILD/RUNOFF/README.md).
 
-### Calving file
+### [Calving file](BUILD/CALVING/README.md)
+Calving file are used when activating `ICB` module in NEMO. ( `ln_iceberg=.true.` in `namberg` namelist block).
+We use some observation estimates that gives the calving rate (GT/year) foreach identified ice-shelf. The calving
+file is built, reparting the calving rate within specific points along the iceshelves.  
+NEMO ICB module then, use this information at grid point, in order to feed different classes at each time step. When a
+particular class reaches a threshold value, one or several icebergs of this class are calved. One calved, they are advected
+by the ocean circulation and melt along their path.  
+Building this file is a multi step process, with similarities with the runoff building: (1) identification of ice-shelved, (2)
+determination of calving points. (3) repartiion of the calving rates on the calving points.  
+In order to create this file, see this corresponding [document](BUILD/CALVING/README.md).
 
-### Ice shelve melting file
+### [Ice shelve melting file](BUILD/ISFMELT/README.md)
 
 ### [Restoring file](BUILD/RESTORING/README.md)
 Restoring file is used for 3D T/S restoring. This file gives a restoring coefficient (s-1) which is read
