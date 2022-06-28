@@ -48,6 +48,7 @@ La [namelist du run de Mercator](https://raw.githubusercontent.com/immerse-proje
   - [x] ouverture cavités (mieux pour la marée et études antartiques)
   - [x] param Renault et al.
   - [x] skin temperature Brodeau 
+  - [x] une version barotrope pour correction DAC (voir avec Lauren & Clément)
 
 #### Presque actés, à tester/quantifier avant mise en place
 
@@ -133,7 +134,7 @@ La [namelist du run de Mercator](https://raw.githubusercontent.com/immerse-proje
 ## Les actions
 
   -  [ ] discuter avec Mercator (notre proposition, leur approche avec cette config, discussion de leurs choix de param)
-  -  [ ] checker la bathy
+  -  [ ] checker la bathy : travail fait pour FES2022 à récupérer ?
   -  [ ] récupérer outputs de la dernière simu Mercator 
   -  [ ] discuter avec Camille et Claude pour paramétrisation glace arctique
   -  [ ] quantifier stratégie outputs à la louche 
