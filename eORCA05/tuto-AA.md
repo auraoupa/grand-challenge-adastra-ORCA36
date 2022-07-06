@@ -41,6 +41,7 @@ ln -sf /gpfswork/rech/cli/rcli002/ORCA05/ORCA05-I-original/ORCA05_bathy_meter_v2
 ./mkbathy05
 ```
 ### Get NEMO4.2 version
+
  - We are downloading the latest release :
 ```git clone --branch 4.2.0 https://forge.nemo-ocean.eu/nemo/nemo.git nemo_4.2.0```
  - For later compilation of the tools : we add the arch_X64_JEANZAY_jm to the arch repo : ```cp /linkhome/rech/genlgg01/rcli002/CONFIGS/CONFIG_eORCA05.L121/eORCA05.L121-GD2022/arch/arch-X64_JEANZAY_jm.fcm /gpfswork/rech/cli/rote001/nemo_4.2.0/arch/CNRS/.``` and modify it so it points to JM's xios in his workdir/DEV (also be sure to have loaded hdf5/1.10.5-mpi before compiling)
@@ -64,8 +65,9 @@ cp /gpfswork/rech/eee/rote001/git/grand-challenge-adastra-ORCA36/eORCA05/BUILD/D
  - I modify the default namelist_ref from /gpfswork/rech/cli/rote001/nemo_4.2.0/tools/DOMAINcfg with values from JMM's namelist that fits the tool from version 4.0.6 : /gpfswork/rech/eee/rote001/git/grand-challenge-adastra-ORCA36/eORCA05/BUILD/DOMAIN_cfg/namelist_cfg.L121 : it gives namelist_cfg_eORCA05.L121_v4.2
  - make a link between namelist_ref and namelist_cfg
  - I modify jobdomaincdf according to my set_up and run it : ```sbatch jobdomaincfg ```, it will produce domain_cfg_????.nc and mesh_mask_????.nc
- - Document the domcfg file, compress and move to input :
+ - Rebuild and document the domcfg file, compress and move to input :
 ```
+rebuild_nemo -d 1 domain_cfg 20
 ln -sf /gpfswork/rech/cli/rote001/nemo_4.2.0/tools/DOMAINcfg/BLD/bin/dom_doc.exe .
 ./dom_doc.exe -n namelist_ref -d domain_cfg.nc 
 ncks -4 -L 1 --cnk_dmn nav_lev,1 domain_cfg.nc domain_cfg.nc4 (make sure to load nco :module load nco)
@@ -73,6 +75,7 @@ mv domain_cfg.nc4 /gpfswork/rech/cli/rote001/eORCA05.L121/eORCA05.L121-I/eORCA02
 ```
   - same for mesh_mask :
 ```
+rebuild_nemo -d 1 mesh_mask 20
 ncks -4 -L 1 --cnk_dmn nav_lev,1 mesh_mask.nc mesh_mask.nc4 (make sure to load nco :module load nco)
 mv mesh_mask.nc4 /gpfswork/rech/cli/rote001/eORCA05.L121/eORCA05.L121-I/eORCA025.L121_mesh_mask_v4.2.nc
 ```
