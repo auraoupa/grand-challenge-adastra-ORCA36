@@ -68,9 +68,15 @@ cp /gpfswork/rech/eee/rote001/git/grand-challenge-adastra-ORCA36/eORCA05/BUILD/D
 ```
 ln -sf /gpfswork/rech/cli/rote001/nemo_4.2.0/tools/DOMAINcfg/BLD/bin/dom_doc.exe .
 ./dom_doc.exe -n namelist_ref -d domain_cfg.nc 
-ncks -4 -L 1 --cnk_dmn z,1 domain_cfg.nc domain_cfg.nc4 (make sure to load nco :module load nco)
+ncks -4 -L 1 --cnk_dmn nav_lev,1 domain_cfg.nc domain_cfg.nc4 (make sure to load nco :module load nco)
 mv domain_cfg.nc4 /gpfswork/rech/cli/rote001/eORCA05.L121/eORCA05.L121-I/eORCA025.L121_domain_cfg_v4.2.nc
 ```
+  - same for mesh_mask :
+```
+ncks -4 -L 1 --cnk_dmn nav_lev,1 mesh_mask.nc mesh_mask.nc4 (make sure to load nco :module load nco)
+mv mesh_mask.nc4 /gpfswork/rech/cli/rote001/eORCA05.L121/eORCA05.L121-I/eORCA025.L121_mesh_mask_v4.2.nc
+```
+
 
 
 
