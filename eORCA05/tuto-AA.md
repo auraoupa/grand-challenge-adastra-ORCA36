@@ -16,6 +16,7 @@ git push --set-upstream origin AAjeanzay
 ### Compile the tools
 
 ```
+cp -r /gpfswork/rech/eee/rote001/git/grand-challenge-adastra-ORCA36/eORCA05/BUILD /gpfswork/rech/cli/rote001/DEV/.
 cd BUILD/HGR/
 make all #Makefile already adapted to jean-zay
 ```
@@ -38,6 +39,35 @@ Then on jean-zay :
 ```
 ln -sf /gpfswork/rech/cli/rcli002/ORCA05/ORCA05-I-original/ORCA05_bathy_meter_v2.nc .
 ./mkbathy05
+```
+### Get NEMO4.2 version
+ - We are downloading the latest release :
+```git clone --branch 4.2.0 https://forge.nemo-ocean.eu/nemo/nemo.git nemo_4.2.0```
+ - For later compilation of the tools : we add the arch_X64_JEANZAY_jm to the arch repo : ```cp /linkhome/rech/genlgg01/rcli002/CONFIGS/CONFIG_eORCA05.L121/eORCA05.L121-GD2022/arch/arch-X64_JEANZAY_jm.fcm /gpfswork/rech/cli/rote001/nemo_4.2.0/arch/CNRS/.``` and modify it so it points to JM's xios in his workdir/DEV (also be sure to have loaded hdf5/1.10.5-mpi before compiling)
+
+### Compile REBUILD_NEMO
+
+Will be useful for multiple things, must be accessible from anywhere :
+  - compile the nemo tool : ```./maketools -m X64_JEANZAY_jm -n REBUILD_NEMO```
+  - put the repo in the PATH so that executables can be accessed from anywhere : ```export PATH=/gpfswork/rech/cli/rote001/nemo_4.2.0/tools/REBUILD_NEMO:$PATH```
+  - 
+### Create the domain_cfg
+
+ - We compile the domain tool in /gpfswork/rech/cli/rote001/nemo_4.2.0/tools : ```./maketools -m X64_JEANZAY_jm -n DOMAINcfg```
+ - In /gpfswork/rech/cli/rote001/DEV/, I create a MAKE_DOMAIN_CFG repo and link the executables, files, namelist and script :
+```
+ln -sf /gpfswork/rech/cli/rote001/nemo_4.2.0/tools/DOMAINcfg/make_domain_cfg.exe .
+ln -sf /gpfswork/rech/cli/rote001/DEV/BUILD/HGR/eORCA05_bathymetry_b0.2_closed_seas.nc bathy_meter.nc
+ln -sf /gpfswork/rech/cli/rote001/DEV/BUILD/HGR/eORCA05_coordinates.nc coordinates.nc
+cp /gpfswork/rech/eee/rote001/git/grand-challenge-adastra-ORCA36/eORCA05/BUILD/DOMAIN_cfg/jobdomaincfg .
+```
+ - I modify the default namelist_ref from /gpfswork/rech/cli/rote001/nemo_4.2.0/tools/DOMAINcfg with values from JMM's namelist that fits the tool from version 4.0.6 : /gpfswork/rech/eee/rote001/git/grand-challenge-adastra-ORCA36/eORCA05/BUILD/DOMAIN_cfg/namelist_cfg.L121 : it gives namelist_cfg_eORCA05.L121_v4.2
+ - make a link between namelist_ref and namelist_cfg
+ - I modify jobdomaincdf according to my set_up and run it : ```sbatch jobdomaincfg ```, it will produce domain_cfg_????.nc and mesh_mask_????.nc
+ - Document the domcfg file :
+```
+ln -sf /gpfswork/rech/cli/rote001/nemo_4.2.0/tools/DOMAINcfg/BLD/bin/dom_doc.exe .
+./dom_doc.exe -n namelist_ref -d domain_cfg.nc 
 ```
 
 
