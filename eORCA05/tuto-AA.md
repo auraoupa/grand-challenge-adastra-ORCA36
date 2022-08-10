@@ -83,7 +83,15 @@ ncks -4 -L 1 --cnk_dmn nav_lev,1 mesh_mask.nc mesh_mask.nc4 (make sure to load n
 mv mesh_mask.nc4 /gpfswork/rech/cli/rote001/eORCA05.L121/eORCA05.L121-I/eORCA025.L121_mesh_mask_v4.2.nc
 ```
 
+### Build initial conditions 
 
+ - get sosie tool : ```git clone git@github.com:brodeau/sosie.git```dans un sshfs de git de jean-zay (ici commit 9dca98d81dfb7ec8dbc518ce0f764734a0a05e22)
+ - compile sosie tool : 
+
+```
+ln -sf macro/make.macro_ifort_JEAN-ZAY make.macro
+make
+```
 
 
 
