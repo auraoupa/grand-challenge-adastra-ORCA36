@@ -103,7 +103,6 @@ make
  - I decided to download the latest version to see if it is working nice with NEMO4.2, I will revert to JMM's rev 1869 if it is not ...
 
  - Directly on jean-zay :
- - 
 ```
 module load svn
 cd /gpfswork/rech/cli/rote001/DEV
@@ -117,7 +116,7 @@ cd xios_trunk
 Check https://github.com/meom-group/DCM/blob/master/DOC/dcm_getting_started.md for the necessay steps
 
  - on cal1's sshfs git repo of jean-zay : ```alberta@ige-meom-cal1:/mnt/meom/workdir/alberta/jeanzay-git$ git clone --branch 4.2 git@github.com:meom-group/DCM.git DCM_4.2```
- - I redo the download of NEMO4.2.0 inside the DCM_2.0 arborescence (on lgge194, for some reasons it doesn't work on cal1 ...): `` git clone --branch 4.2.0 https://forge.nemo-ocean.eu/nemo/nemo.git NEMO4```
+ - I redo the download of NEMO4.2.0 inside the DCM_2.0 arborescence (on lgge194, for some reasons it doesn't work on cal1 ...): ``` git clone --branch 4.2.0 https://forge.nemo-ocean.eu/nemo/nemo.git NEMO4```
  - I set up the modules :
 ```
 cd
@@ -127,7 +126,7 @@ cp /linkhome/rech/genlgg01/rcli002/modules/DCM/4.2.0 modules/DCM/4.2
  - I modify my 4.2.0 file so that it fits my paths
  - I add ```export MODULEPATH=$MODULEPATH:$HOME/modules/```in my .bashrc 
  - I run ```module load DCM/4.2``` for the current session and add it to my .bashrc for future ones
- - I set up my DCM environment by crceating some directories : ```mkdir CONFIGS RUNS``` and adding some [environments aliases](https://github.com/meom-group/DCM/blob/4.2/DCMTOOLS/templates/dcm_setup_module.sh) in my .bashrc
+ - I set up my DCM environment by ceating some directories : ```mkdir CONFIGS RUNS``` and adding some [environments aliases](https://github.com/meom-group/DCM/blob/4.2/DCMTOOLS/templates/dcm_setup_module.sh) in my .bashrc
 
 ### Run the first eORCA05.L121 run
 
@@ -135,4 +134,4 @@ cp /linkhome/rech/genlgg01/rcli002/modules/DCM/4.2.0 modules/DCM/4.2
  - customize my arch : ```cp /gpfswork/rech/eee/rote001/git/DCM_4.2/DCMTOOLS/NEMOREF/NEMO4/arch/CNRS/arch-X64_JEANZAY.fcm arch/arch-X64_JEANZAYAA.fcm``` (path to xios to be changed)
  - in CONFIG dir, modify CPP.keys following : https://github.com/immerse-project/ORCA36-demonstrator, and makefile to use arch-X64_JEANZAYAA and ref=yes
  - ```make install; make````
- - 
+ - it is compiling ok without the drakkar customs
