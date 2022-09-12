@@ -135,3 +135,6 @@ cp /linkhome/rech/genlgg01/rcli002/modules/DCM/4.2.0 modules/DCM/4.2
  - in CONFIG dir, modify CPP.keys following : https://github.com/immerse-project/ORCA36-demonstrator, and makefile to use arch-X64_JEANZAYAA and ref=yes
  - ```make install; make````
  - it is compiling ok without the drakkar customs
+ - ```make ctl``` copy the template files in CTL corresponding directory
+ - in ```/gpfswork/rech/eee/rote001/git/DCM_4.2/RUNTOOLS/lib``` do ```ln -sf function_4_jean-zay.sh function_4.sh```
+
