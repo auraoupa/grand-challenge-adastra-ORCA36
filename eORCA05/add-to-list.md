@@ -1,0 +1,7 @@
+ - Asselin filter parameter ?
+ - ice-shelf fichiers entrée ?
+ - free or partial slip ?
+ - shlat2d in 4.2 ?
+ - top-bottom friction ?
+ - geothermal flux ?
+ - tke vs gls ?
