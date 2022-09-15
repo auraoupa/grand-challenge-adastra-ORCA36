@@ -133,8 +133,22 @@ cp /linkhome/rech/genlgg01/rcli002/modules/DCM/4.2.0 modules/DCM/4.2
  - ```dcm_mkconfdir_local eORCA05.L121 JZAA001```
  - customize my arch : ```cp /gpfswork/rech/eee/rote001/git/DCM_4.2/DCMTOOLS/NEMOREF/NEMO4/arch/CNRS/arch-X64_JEANZAY.fcm arch/arch-X64_JEANZAYAA.fcm``` (path to xios to be changed)
  - in CONFIG dir, modify CPP.keys following : https://github.com/immerse-project/ORCA36-demonstrator, and makefile to use arch-X64_JEANZAYAA and ref=yes
- - ```make install; make````
+ - ```make install; make```
  - it is compiling ok without the drakkar customs
  - ```make ctl``` copy the template files in CTL corresponding directory
  - in ```/gpfswork/rech/eee/rote001/git/DCM_4.2/RUNTOOLS/lib``` do ```ln -sf function_4_jean-zay.sh function_4.sh```
+ - merge of [Clément's namelist](https://github.com/immerse-project/ORCA36-demonstrator/blob/main/NAMLST/namelist_cfg) and the NEMO 4.2 reference namelist + adaptation to 0.5° resolution and JRA55 forcings, some questions remain :
+    - no bulk in Clément's run ?
+    - no sssr ? no sorunoff ?
+    - atm pressure in JRA55 ?
+    - top & bottom friction ?
+    - eos80 ou teos10 ?
+    - adv scheme for tracer fct 4 ?
+    - Asselin filter parameter ?
+    - ice-shelf fichiers entrée ?
+    - free or partial slip ?
+    - shlat2d in 4.2 ?
+    - top-bottom friction ?
+    - geothermal flux ?
+    - tke vs gls ?
 
