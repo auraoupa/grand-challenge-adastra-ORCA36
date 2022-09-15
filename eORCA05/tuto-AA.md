@@ -140,6 +140,7 @@ cp /linkhome/rech/genlgg01/rcli002/modules/DCM/4.2.0 modules/DCM/4.2
  - merge of [Clément's namelist](https://github.com/immerse-project/ORCA36-demonstrator/blob/main/NAMLST/namelist_cfg) and the NEMO 4.2 reference namelist + adaptation to 0.5° resolution and JRA55 forcings, some questions remain :
     - no bulk in Clément's run ?
     - no sssr ? no sorunoff ?
+    - quels runoffs ?
     - atm pressure in JRA55 ?
     - top & bottom friction ?
     - eos80 ou teos10 ?
