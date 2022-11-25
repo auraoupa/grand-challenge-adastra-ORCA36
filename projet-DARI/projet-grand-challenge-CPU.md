@@ -16,7 +16,7 @@ CT1
 
 ### Objectifs du Grand Challenge, enjeu scientifique ou sociétal …
 
-L'objectif principal de cette simulation numérique de l'océan global à très haute résolution est la préparation des missions altimétriques SWOT et WACM ...
+L'objectif principal de cette simulation numérique de l'océan global à très haute résolution est d'accompagner l'exploitation des données de la mission altimétrique SWOT et de préparer les futures missions d'observation des courant de surface (comme ODYSEA).  
 
 ### Description de l’étude
 
