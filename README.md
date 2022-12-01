@@ -106,7 +106,7 @@ La [namelist du run de Mercator](https://raw.githubusercontent.com/immerse-proje
  
    - [ ] restart simulation Clément Bricaud
    - [ ] réanalyse GLORYS12 (moyenne mensuelle)
-   - [ ] état initial dans les cavités à construire (Pierre Mathiot)
+   - [ ] état initial dans les cavités à construire (Pierre Mathiot) -> déjà fait pour le run de Clément
   
 </details>
 
