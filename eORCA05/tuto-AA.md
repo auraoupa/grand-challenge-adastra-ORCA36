@@ -101,6 +101,7 @@ make
 #### XIOS
 
  - I decided to download the latest version to see if it is working nice with NEMO4.2, I will revert to JMM's rev 1869 if it is not ...
+ - To get a specific version of xios, better use the syntax : ```svn co http://forge.ipsl.jussieu.fr/ioserver/svn/XIOS/trunk*@2130* XIOS``` than ```svn co -r 2130 http://forge.ipsl.jussieu.fr/ioserver/svn/XIOS/trunk XIOS``` as the latter won't work for some versions
 
  - Directly on jean-zay :
 ```
