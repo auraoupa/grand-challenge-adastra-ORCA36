@@ -67,17 +67,17 @@ CNRS, IGE
 1 an à 121 niveaux = 6MhCPU
 10 ans = 60MhCPU sur 6 mois ?
 
-### Nombre de GPU utilisés simultanément
+### Nombre de CPU utilisés simultanément
 
 Entre 18 000 et 50 000 coeurs soit entre 190 et 520 processeurs Genoa EPYC à 96 coeurs
 
-### Allocation d’heures demandée pour le projet, en nombre d’heures GPU
+### Allocation d’heures demandée pour le projet, en nombre d’heures CPU
 
 100MhCPU ?
 
-### Taille mémoire par GPU nécessaire
+### Taille mémoire par CPU nécessaire
 
-### Indication sur la distribution des travaux en durée et en nombre de GPU ou de nœuds
+### Indication sur la distribution des travaux en durée et en nombre de CPU ou de nœuds
 
 ### Date estimée de démarrage du projet
 
@@ -101,8 +101,12 @@ Entre 18 000 et 50 000 coeurs soit entre 190 et 520 processeurs Genoa EPYC à 96
 
 ## Codes utilisés et dépendances
 
-### Le projet a-t-il déjà tourné sur Jean Zay GPU ou machine GPU similaire ?
-sur MAreNostrum et Occigen ?
+NEMO, XIOS, OASIS
+librairies hdf, netcdf
+
+### Le projet a-t-il déjà tourné sur Jean Zay CPU ou machine CPU similaire ?
+sur MAreNostrum, ECMWF
+maquette eORCA05.L121 sur Jean-Zay
 
 ### Numéro DARI si le porteur de projet a déjà postulé
 
@@ -120,7 +124,7 @@ eNATL60 : 40MhCPU avec 18 000 coeurs simultanément
 
 ### Langage utilisé : C, C++, Fortran, Python, …
 
-fortran
+fortran, C
 
 ### Type et version du compilateur : GCC, PGI, …
 
@@ -134,7 +138,7 @@ hybrid OpenMP-MPI
 
 ### Logiciels et bibliothèques nécessaires 
 
-netcdf, hdf5, mpi, oasis
+netcdf, hdf5, mpi
 
 ### Existence ou non d’un système de protection/reprise (checkpoint/restart)
 
