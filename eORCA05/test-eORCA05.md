@@ -4,8 +4,6 @@ All the input and forcing files are constructed following [JMM's instructions](h
 
 List of the runs :
 
------------------------
 | Name of the run | NEMO version | XIOS version | DRAKKAR | CPP.keys |
------------------------
+|-------|---|--|--|---------|
 | eORCA05.L121-JAAZ01 | 4.2 commit 9fd6392 | trunk rev 2418 | no | key_si3, key_xios, key_qco, key_isf |
--------------
