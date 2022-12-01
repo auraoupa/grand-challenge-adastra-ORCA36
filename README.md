@@ -8,6 +8,8 @@ Date de soumission du projet : été 2022
 
 Date de réalisation de la simulation : entre octobre 2022 et avril 2023 (peut être décalé de 3-5 mois cf GENCI)
 
+Update 11/22 : partition CPU dispo fin Q1 2023, organisation grand défi début 2023
+
 ## Argumentaire scientifique
 
 ### Pour la demande auprès de GENCI :
