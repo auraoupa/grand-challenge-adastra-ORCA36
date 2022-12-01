@@ -52,15 +52,15 @@ CNRS, IGE
 
 ### Nombre de personnes avec statuts, fonctions et appartenance
 
-Julien Le Sommer, DR CNRS, IGE
-Thierry Penduff, DR CNRS, IGE
-Nicolas Jourdain
-Pierre Mathiot
-Clément Bricaud
-Romain Bourdalle-Badie
-Pierre Rampal
-Clément Ubelmann
-Laurent Brodeau
+- Julien Le Sommer, DR CNRS, IGE
+- Thierry Penduff, DR CNRS, IGE
+- Nicolas Jourdain, IGE
+- Pierre Mathiot, IGE
+- Clément Bricaud, MOI
+- Romain Bourdalle-Badie, MOI
+- Pierre Rampal, IGE
+- Clément Ubelmann, Datlas
+- Laurent Brodeau, Datlas/IGE
 
 ## Estimation des ressources de calcul nécessaires et de la durée du projet
 
