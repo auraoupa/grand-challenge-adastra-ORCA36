@@ -87,7 +87,7 @@ La [namelist du run de Mercator](https://raw.githubusercontent.com/immerse-proje
 <summary> nombre de niveaux ? </summary>
   
    - [ ] 75 (POUR : taille des outputs/ CONTRE : pas suffisant pour les fines échelles par rapport à la résolution horizontale)
-   - [ ] 121 (POUR : bien adaptée pour glace antartique / CONTRE : )
+   - [ ] 121 (POUR : [bien adaptée pour glace antarctique](https://github.com/auraoupa/grand-challenge-adastra-ORCA36/blob/main/plots/plot_dept.png) / CONTRE : )
    - [ ] 150 (POUR: encore mieux pour les fines échelles, overflows / CONTRE : outputs 2X plus gros)
   
 </details>
