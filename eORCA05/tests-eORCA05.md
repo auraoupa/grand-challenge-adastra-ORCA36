@@ -11,4 +11,4 @@ List of the runs :
 | MED025.L75-JZAA001 | 4.2 commit 9fd6392 | trunk rev 2313 | yes | **MED025.L75-GJM421** | key_netcdf4, key_qco, key_si3, key_xios, key_drakkar | run ok for 3 months | 0.095 sec/time-step | 1200s | 40 | 2 | 8x7 |
 | eORCA05.L121-JAAZ003 | 4.2 commit 9fd6392 | trunk rev 2313 | **yes** | MED025.L75-JZAA001 | key_netcdf4, key_qco, key_si3, key_xios, key_drakkar | run ok for 5 days | 3.39 sec/time-step | 1200s | 40 | 2 | 9x5 |
 | eORCA05.L121-JAAZ004 | 4.2 commit 9fd6392 | **trunk rev 2418** | yes | eORCA05.L121-JAAZ003 | key_netcdf4, key_qco, key_si3, key_xios, key_drakkar | run ok for 5 days | 3.35 sec/time-step | 1200s | 40 | 2 | 9x5 |
-| eORCA05.L121-JAAZ005 | 4.2 commit 9fd6392 | trunk rev 2418 | yes | eORCA05.L121-JAAZ003 | key_netcdf4, key_qco, key_si3, key_xios, key_drakkar |  |  | 1200s | **78 | 2 | 11x9** |
+| eORCA05.L121-JAAZ005 | 4.2 commit 9fd6392 | trunk rev 2418 | yes | eORCA05.L121-JAAZ003 | key_netcdf4, key_qco, key_si3, key_xios, key_drakkar | run ok for 5 day | 1.67 sec/time-step | 1200s | **78 | 2 | 11x9** |
