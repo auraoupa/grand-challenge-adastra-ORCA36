@@ -35,7 +35,7 @@ ORCA36 : configuration développée à Mercator Océan dans le cadre du projet 
 
   - 2-3km de résolution, 12960 x 10776 points de grille (= 3,5 x eNATL60)
   - tourne sur 18000 coeurs minimum, 50 000 coeurs  (cible)
-  - estimation du coût : 3.5 MHCPU/an (ref : MareMostrum4 au BSC)
+  - estimation du coût : 3.5 MHCPU/an (ref : run CBricaud 75 levels MareMostrum4 au BSC)
   - 1 champ 3D 75niveaux ~ 40 Gb (ref eNATL60 : 12GB)
 
 
