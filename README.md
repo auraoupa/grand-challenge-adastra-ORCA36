@@ -50,11 +50,11 @@ La [namelist du run de Mercator](https://raw.githubusercontent.com/immerse-proje
   - [x] ouverture cavités (mieux pour la marée et études antartiques)
   - [x] param Renault et al.
   - [x] skin temperature Brodeau 
-  - [x] une version barotrope pour correction DAC (voir avec Lauren & Clément)
+  - [x] une version barotrope pour correction DAC (voir avec Laurent & Clément)
 
 #### Presque actés, à tester/quantifier avant mise en place
 
-  - [ ] SAS et SI3 via OASIS
+  - ~~[ ]~~ SAS et SI3 via OASIS => pas encore porté en 4.2
   - [ ] GLS pour turbulence verticale (idem Mercator)
 <details>
 <summary> stratégie outputs </summary>
