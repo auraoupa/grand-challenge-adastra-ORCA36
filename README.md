@@ -54,7 +54,7 @@ La [namelist du run de Mercator](https://raw.githubusercontent.com/immerse-proje
 
 #### Presque actés, à tester/quantifier avant mise en place
 
-  - ~~ [ ] ~~ SAS et SI3 via OASIS => pas encore porté en 4.2
+  - ~~[ ] SAS et SI3 via OASIS~~ => pas encore porté en 4.2
   - [ ] GLS pour turbulence verticale (idem Mercator)
 <details>
 <summary> stratégie outputs </summary>
