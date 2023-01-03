@@ -4,9 +4,9 @@ All the input and forcing files are constructed following [JMM's instructions](h
 
 List of the runs :
 
-  - **eORCA05.L121-JZAA009** = eORCA05.L121-JZAA008 + ubs for momentum, no vector form  : 1.73 sec/time-step (+3%)
-  - **eORCA05.L121-JZAA008** = eORCA05.L121-JZAA007 + gls instead of tke, no evd  : 1.68 sec/time-step (+7%)
-  - **eORCA05.L121-JZAA007** = eORCA05.L121-JZAA006 + ice_shelf & cavities (new domain file, no init) : 1.56 sec/time-step (-10%)
+  - **eORCA05.L121-JZAA009** = eORCA05.L121-JZAA008 + ubs for momentum  : 1.73 sec/time-step (+4%)
+  - **eORCA05.L121-JZAA008** = eORCA05.L121-JZAA007 + gls instead of tke, no evd  : 1.67 sec/time-step (+7%)
+  - **eORCA05.L121-JZAA007** = eORCA05.L121-JZAA006 + ice_shelf & cavities (new domain file, no init, FCT order 2 instead of 4) : 1.56 sec/time-step (-10%)
   - **eORCA05.L121-JZAA006** = eORCA05.L121-JZAA005 + tide (M2,S2,N2,O1,K1) : 1.74 sec/time-step (+5%)
   - **eORCA05.L121-JZAA005** = eORCA05.L121-JZAA004 on 2 nodes (78 cores for NEMO, 2 cores for XIOS, 11x9 decomposition): 1.67 sec/time-step (-50%)
   - **eORCA05.L121-JZAA004** = eORCA05.L121-JZAA003 w latest XIOS_trunk (rev 2418) : 3.35 sec/time-step (-1%)
