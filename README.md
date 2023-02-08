@@ -4,14 +4,7 @@ Dans ce répertoire seront regroupées toutes les informations relatives à la s
 
 ## Calendrier
 
-Update février 2023 :
 Candidatures à envoyer avant le 3 avril 2023, grands challenges entre début mai et fin octobre 2023
-
-Update 11/22 : partition CPU dispo fin Q1 2023, organisation grand défi début 2023
-
-Date de soumission du projet : été 2022
-
-Date de réalisation de la simulation : entre octobre 2022 et avril 2023 (peut être décalé de 3-5 mois cf GENCI)
 
 
 ## Argumentaire scientifique
