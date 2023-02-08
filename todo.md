@@ -17,7 +17,8 @@ Candidature à envoyer avant le 3 avril 2023, période de calcul du 1er mai au 3
   
 En attendant que la bathy soit prête :
 
-  - [ ] porter en 4.2 et tester SPLIT_ORCA sur maquette au 1/2°
+  - [ ] tester SI3 via OASIS dans maquette au 1/2°
+  - [ ] porter en 4.2 et tester SPLIT_ORCA sur maquette au 1/2° (voir avec Eric Maisonnave si besoin)
   - [ ] implémenter xios 3 (demander le commit à Seb Masson)
   - [ ] implémenter RK3 (demander si c'est assez mûr à Jérôme Chanut)
   - [ ] implémenter skin temperature (demander à Laurent Brodeau)
