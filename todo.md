@@ -17,14 +17,14 @@ Candidature à envoyer avant le 3 avril 2023, période de calcul du 1er mai au 3
   
 En attendant que la bathy soit prête :
 
-  - [ ] tester SI3 via OASIS dans maquette au 1/2°
+  - [ ] [tester SI3 via OASIS dans maquette au 1/2°](oasis.md)
   - [ ] porter en 4.2 et tester SPLIT_ORCA sur maquette au 1/2° (voir avec Eric Maisonnave si besoin)
-  - [ ] implémenter xios 3 (demander le commit à Seb Masson)
+  - [ ] [implémenter xios 3 (demander le commit à Seb Masson)](xios3.md)
   - [ ] implémenter RK3 (demander si c'est assez mûr à Jérôme Chanut)
   - [ ] implémenter skin temperature (demander à Laurent Brodeau)
   - [ ] implémenter run barotrope maquette (discussion avec Julien et Clément Ubelmann)
   - [ ] élaborer stratégie de sorties et quantifier le stockage
-  - [ ] compiler xios oasis nemo sur Adastra avec compilateurs natifs (check infos fournies par Adam Blaker)
+  - [ ] [compiler xios oasis nemo sur Adastra avec compilateurs natifs (check infos fournies par Adam Blaker)](install_adastra.md)
   - [ ] quand tout est en place porter maquette sur ROME (AMD nodes) pour mieux évaluer performances
 
 Une fois la nouvelle bathy prête :
