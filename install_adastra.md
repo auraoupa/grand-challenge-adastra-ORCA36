@@ -9,3 +9,9 @@ module load cpe/22.11
 module load cray-hdf5-parallel/1.12.2.1
 module load cray-netcdf-hdf5parallel/4.9.0.1
 ```
+
+### Compilation xios
+
+```bash
+svn co https://forge.ipsl.jussieu.fr/ioserver/svn/XIOS3/branches/xios-3.0-beta 
+```
