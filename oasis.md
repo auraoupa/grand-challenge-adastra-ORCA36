@@ -1,6 +1,7 @@
 # Coupling NEMO and SI3 via OASIS
 
-git clone https://gitlab.com/cerfacs/oasis3-mct.git
+```git clone https://gitlab.com/cerfacs/oasis3-mct.git```
+```git clone --branch OASIS3-MCT_4.0 https://gitlab.com/cerfacs/oasis3-mct.git
 
 OASIS Forum :
 
