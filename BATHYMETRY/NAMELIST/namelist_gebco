@@ -1,0 +1,29 @@
+! Namelist file to be used by batinterp.exe
+! namelist used in the   eORCA36 bathymetry creation process
+  
+&naminterpo
+   nn_interp = 1       ! interpolation method : O: Arithmetic Average
+                       !                        1: Median average
+                       !                        2: Median average without taking 0 values
+   nn_perio  = 0       ! NEMO periodic conditions (99 : automatic inference)
+
+   ! NEMO bathymetry output file
+   cn_fout   = 'eORCA36_GEBCO_2022_PM-JMM_bathy_v1.0.nc'   ! name of the output filer
+   cn_varout = 'Bathymetry'       ! name of output variable
+
+   ! NEMO coordinate file
+   cn_fgrid  = '../eORCA_R36_coordinates_v3.0.noz.nc4'      ! name of horizontal grid file
+
+   ! External Bathymetric file
+   cn_fbatin = 'GEBCO_JM_2022_flooded.nc'  ! name of external baty file
+   ln_regin  = .true.  ! True  : Regular external bathy file
+                        ! False :Irregular external bathy file
+   cn_varin  = 'elevation'    ! name of bathymetry in file
+   cn_xdim   = 'lon'      ! name of X dimension
+   cn_ydim   = 'lat'      ! name of Y dimension
+   cn_lonv   = 'lon'    ! name of longitude variable
+   cn_latv   = 'lat'    ! name of latitude variable
+
+   ! change sign  of bathymetry
+   ln_sign   = .FALSE.  ! change sign for bathymetry (ISF related)
+/
