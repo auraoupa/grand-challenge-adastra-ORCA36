@@ -21,7 +21,7 @@ Ice draft is the depth of the iceshelf ice-ocean interface, relative to the sea 
 icedraft =  (surface - thickness ) on the ocean  
 icedraft =  bed  elsewhere  
 
-A dedicated BATHY_TOOL program ( [bedmachine_idraft](
+A dedicated BATHY_TOOL program ( [bedmachine_idraft](https://github.com/molines/BATHY_TOOLS/blob/master/bedmachine_idraft.f90) was written for this purpose.
 ### 2.2. Suspected flaws in GEBCO_2022
   Two major flaws are observed on GEBCO_2022 dataset, when comparing with accurate coastline
   *  Some areas considered as ocean in the dataset are  in fact on land.
