@@ -15,14 +15,21 @@ are prefered, allowing a consistent ice draft for under ice-shelf cavities.
 High resolution coastline definition is also needed to setup an accurate land-sea mask. Coastline from Open Street Map are
 available as shapefile. This kind of file can be processed by Geographic Information System (for exampke QGIS program, 
 see below). 
-### 2.1. Suspected flaws 
+### 2.1  Construction of the icedraft field
+Ice draft is the depth of the iceshelf ice-ocean interface, relative to the sea surface. In BedMachine product, available fields are : surface ( the height of the surface at atmosphere limit), bed ( the deptht of the  bed *ie* the bathymetry in the ocean, the depth of the 'bedrock' where the area in ice covered, and ice thickness (ie the tickness of the iceshelf).  Ice draft can therefore be computed from these fields. : 
+
+icedraft =  (surface - thickness ) on the ocean  
+icedraft =  bed  elsewhere  
+
+A dedicated BATHY_TOOL program ( [bedmachine_idraft](
+### 2.2. Suspected flaws in GEBCO_2022
   Two major flaws are observed on GEBCO_2022 dataset, when comparing with accurate coastline
   *  Some areas considered as ocean in the dataset are  in fact on land.
   *  Some areas considered as land in the dataset are in fact in the ocean.
 
   (give examples)
-### 2.2 Proposed procedure for dataset correction (GEBCO_2022)
-#### 2.2.1 Use of QGIS 
+### 2.3 Proposed procedure for dataset correction (GEBCO_2022)
+#### 2.3.1 Use of QGIS 
 At this step, a geotiff GEBCO_2022 can be loaded in QGIS. The OSM coastline is loaded as a shape file and  it is easy to understand or to vizualize the flaws mentioned above. QGIS also offer the possibility to create a coastline mask at the resolution of the background
 geotiff file (GEBCO_2022, 15" resolution), from the OSM coastline considered as a series of polygons which are filled. 
 The resulting file is a netcdf file (`OSM_land_to_gebco.nc`. For reference I copy-paste the gdal command that was issued for the
@@ -35,17 +42,17 @@ gdal_translate -of NetCDF $OSM_DIR/OSM_land_to_gebco.tif $OSM_DIR/OSM_land_to_ge
 
 ```
 
-#### 2.2.2 Masking original dataset with coastline mask
+#### 2.3.2 Masking original dataset with coastline mask
 Dedicated programs were created for managing GEBCO type grids [BATHY-TOOLS on github](https://github.com/molines/BATHY_TOOLS). This huge grid (86400 x 43200) is not easy to vizualise with standard tools like `ncview`, and  the BATHY_TOOLS [gebco_xtrac](https://github.com/molines/BATHY_TOOLS/blob/master/gebco_xtrac.f90) program allows to work with smaller subset, as well as global. In addition, this program has many other funcionalities, in particular the capability  
 to apply a mask on the original data. This was done for GEBCO_2022 file using the coastline mask. At this step, the resulting file
 is in agreement with the OSM coastlines, but still some inland lakes of marsh zones of any kind remain, in general not connected with
 the open ocean.
-#### 2.2.3 Building a mask for suspicious land points
+#### 2.3.3 Building a mask for suspicious land points
 The masked GEBCO file also exibit suspicious features such as positive elevation (land) where OSM indicates oceanic waters. Many of these suspicious points were verified, having a look at google-earth images: the OSM mask was never faulty. Therefore we create a mask 
 file in order to keep a map of these abnormal points.  Trying to understand why those points appears, it seems that these features comes from the mapping algorithm used in GEBCO that may produce local extrema where there is a lack of data, in region of strong gradients. It is very likely that the abnormal points detected at this step are only a fraction of all the anomalies (most of them staying in the ocean). In addition, we also visually detected suspicious very deep points close to shallow areas, which probably come from the same local extrema problem. Unfortunatly, we did not find a solution for correcting these.
-#### 2.2.4 Drowning suspicious land points 
+#### 2.3.4 Drowning suspicious land points 
 Using the mask for suspicious points, as decribed in the previous paragraph, we decided to  replace the suspicious points with an extension of the neighbouring oceanic points. This procedure (internaly called 'drowning') was achieved with `mask_drown.x` program, from the [SOSIE package](https://github.com/brodeau/sosie). Keeping in mind the comments of the previous paragraph, after this step, the resulting file is corrected from the visible anomalies, in quite an acceptable way.
-#### 2.2.5 Apply flood filling algorithm for keeping only ocean points
+#### 2.3.5 Apply flood filling algorithm for keeping only ocean points
 Last step in the preparation of a corrected GEBCO_2022 file is  to eliminate  points that are not connected to the world ocean. This is another capability of the  [gebco_xtrac](https://github.com/molines/BATHY_TOOLS/blob/master/gebco_xtrac.f90) program. An initial seed is given in the ocean and all points that can be reached by a direct pathway (*ie* with grid cell side connexion) are kept, the other are transformed to land point ( bathymetry = 0 ). Note that this procedure eliminate in land closed seas or large lake (*ie* Caspian Sea, Great US lakes etc...) that in fact are of interest for coupled simulation with the atmosphere. For the purpose of eORCA36 great challenge, it is not an issue. Resulting corrected file is called `GEBCO_JM_2022_flooded.nc` and is available on `cal1:/mnt/meom/DATA_SET/BATHYMETRY/`.
 
 ## 3. Building the eORCA36 bathymetry
@@ -136,4 +143,4 @@ Morlighem, M. et al. (2022b). IceBridge BedMachine Greenland, Version 5 [Data Se
 
 Morlighem, M., C. Williams, E. Rignot, L. An, J. E. Arndt, J. Bamber, G. Catania, N. Chauché, J. A. Dowdeswell, B. Dorscheel, I. Fenty, K. Hogan, I. Howat, A. Hubbard, M. Jakobsson, T. M. Jordan, K. K. Kjeldsen, R. Millan, L. Mayer, J. Mouginot, B. Noel, C. O Cofaigh, S. J. Palmer, S. Rysgaard, H. Seroussi, M. J. Siegert, P. Slabon, F. Straneo, M. R. van den Broeke, W. Weinrebe, M. Wood, and K. Zinglersen. 2017. BedMachine v3: Complete bed topography and ocean bathymetry mapping of Greenland from multi-beam echo sounding combined with mass conservation. Geophysical Research Letters. 44. DOI: 10.1002/2017GL074954.
 
-GEBCO Compilation Group (2022) GEBCO 2022 Grid (doi:10.5285/e0f0bb80-ab44-2739-e053-6c86abc0289c)
+GEBCO Compilation Group (2022) GEBCO 2022 Grid (doi:1:0.5285/e0f0bb80-ab44-2739-e053-6c86abc0289c)
