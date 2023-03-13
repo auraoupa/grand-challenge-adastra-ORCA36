@@ -10,3 +10,6 @@ OASIS Forum :
 
 >The make.ARCHER2 file is here:
 >https://github.com/hpc-uk/build-instructions/tree/main/apps/OASIS
+
+ - [ ] compile oasis
+ - [ ] compile xios with oasis : in arch.path add oasis path, compile with --use_oasis oasis3_mct
