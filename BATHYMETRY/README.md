@@ -34,7 +34,8 @@ BedMachineAntarctica-v3_lonlat-draft.nc BedMachineGreenland-v5_lonlat_draft.nc)
 Note that for further processing missing value of the ice_draft are set to -9999.99 for GREENLAND and to 0 for ANTARCTICA (reasons for this choice are commented later). 
 
 #### 2.1.3 Mask files
-In the process of preparing the ice draft is is convenient to have a mask file for ice-covered areas and for ice-shelf only. This is done with the program `bedmachine_mask.exe` from the   [BATHYTOOLS](https://github.com/molines/BATHY_TOOLS/).
+In the process of preparing the ice draft is is convenient to have a mask file for ice-covered areas and for ice-shelf only. BedMachine files have a 
+mask variable with values 0 1 2 or 4 depending on the type of surface (0: ocean ice_1:free_land 2:grounded_ice 3:floating_ice 4:lake_vostok) For Greenland, mask value 4 indicates area not belonging to Greenlans (*eg* Elsemeere Island, CA).  The dedicated program `bedmachine_mask.exe` from the   [BATHYTOOLS](https://github.com/molines/BATHY_TOOLS/) was written for for buildind ocean mask (corresponding to values 0 and 3 of the Bed machine mask and iceshelf mask (corresponding to value 3 of the Bed machine mask.). 
 ### 2.2. Suspected flaws in GEBCO_2022
   Two major flaws are observed on GEBCO_2022 dataset, when comparing with accurate coastline
   *  Some areas considered as ocean in the dataset are  in fact on land.
@@ -82,10 +83,13 @@ presents 3 kind of values : 0 on land, -9999.99 on missing points and positive v
 the `missing_value` netcdf attribute to -9999.99 in order to ease the drowning task.
 
 Fixing the missing points was performed using again the `mask_drown` tool of [SOSIE package](https://github.com/brodeau/sosie). It gaves satisfactory results.
+Nevertheless, the area where there are missing points will be taken from BedMachine data and not GEBCO, so that at this level, no real need for a detailed 
+evalutation of this procedure.
 
 ```
 mask_drown -D -i bathy_in.nc -m 0 -x nav_lon -y nav_lev -v Bathymetry -o bathy_out.nc
 ```
+
 #### 3.1.3 : manual checking  of the first guess
 This step is based on [BMGTOOLS](https://archimer.ifremer.fr/doc/00195/30646/) that allows an easy comparision of the data in the bathymetry with a very high resolution of the coast line. It is easy, but very time consuming task (manual). In particular, resolving small features such as fjords along the coast of Nordic countries or Patagonia is critical.
 
@@ -94,6 +98,8 @@ The global file is too big to be easily managed by BMGtools. Therefore, the glob
 At this stage we correct almost all the coastline except for Antarctica and Greenland that will be processed with BedMachine data.
 
 Result of this step is the bathymetric file called: `eORCA36_GEBCO_2022_PM-JMM_bathy_v2_4.2.nc` (note: on NEMO_4.2 type of coordinate file !!! )
+
+Note that BMGtools keep track of all the hand made modifications.  A program will be set up in order to automatically reproduce the hand made modifications, for tracability.
 
 ### 3.2 Adding Antarctica Bathymetry, under iceshelf bathymetry and icedraft
 ### 3.3 Adding Greenland  Bathymetry, under iceshelf bathymetry and icedraft
