@@ -15,13 +15,26 @@ are prefered, allowing a consistent ice draft for under ice-shelf cavities.
 High resolution coastline definition is also needed to setup an accurate land-sea mask. Coastline from Open Street Map are
 available as shapefile. This kind of file can be processed by Geographic Information System (for exampke QGIS program, 
 see below). 
-### 2.1  Construction of the icedraft field
-Ice draft is the depth of the iceshelf ice-ocean interface, relative to the sea surface. In BedMachine product, available fields are : surface ( the height of the surface at atmosphere limit), bed ( the deptht of the  bed *ie* the bathymetry in the ocean, the depth of the 'bedrock' where the area in ice covered, and ice thickness (ie the tickness of the iceshelf).  Ice draft can therefore be computed from these fields. : 
+### 2.1 Preprocessing of the BedMachine files.
+#### 2.1.1 Creating longitude and latitude variables
+BedMachine files correspond to a regular 500m resolution grid. Position of the grid points are given by `x` and `y` variables (in meters)  from a reference origin.
+For NEMOBAT, it is mandatory to have the location of the grid points in geographical coordinates (longitude, latitude).  The program `NSIDC_map_trf.f90`was written for this purpose in the
+[NEMOBAT](https://github.com/molines/NEMOBAT) package ( [NSIDC_map_trf.f90](https://github.com/molines/NEMOBAT/blob/master/INPUT_UTILITIES/NSIDC_map_trf.f90). Resulting files
+keep exactly the same content but have 2 extra 2D variables (nav_lon, nav_lat) describing the geographical position of the grid points.
+(BedMachineAntarctica-v3_lonlat-bed.nc and BedMachineGreenland-v5_lonlat.nc). These files are used as the basis for further processing.
+#### 2.1.2  Construction of the icedraft field
+Ice draft is the depth of the iceshelf ice-ocean interface, relative to the sea surface. In BedMachine product, available fields are : surface ( the height of the surface at atmosphere limit), bed ( the deptht of the  bed *ie* the bathymetry in the ocean, the depth of the 'bedrock' where the area is ice covered, and ice thickness (ie the tickness of the iceshelf)).  Ice draft can therefore be computed from these fields. : 
 
 icedraft =  (surface - thickness ) on the ocean  
 icedraft =  bed  elsewhere  
 
-A dedicated BATHY_TOOL program ( [bedmachine_idraft](https://github.com/molines/BATHY_TOOLS/blob/master/bedmachine_idraft.f90) was written for this purpose.
+
+A dedicated BATHY_TOOL program ( [bedmachine_idraft](https://github.com/molines/BATHY_TOOLS/blob/master/bedmachine_idraft.f90) )was written for this purpose. Resulting files are 
+BedMachineAntarctica-v3_lonlat-draft.nc BedMachineGreenland-v5_lonlat_draft.nc)  
+Note that for further processing missing value of the ice_draft are set to -9999.99 for GREENLAND and to 0 for ANTARCTICA (reasons for this choice are commented later). 
+
+#### 2.1.3 Mask files
+In the process of preparing the ice draft is is convenient to have a mask file for ice-covered areas and for ice-shelf only. This is done with the program `bedmachine_mask.exe` from the   [BATHYTOOLS](https://github.com/molines/BATHY_TOOLS/).
 ### 2.2. Suspected flaws in GEBCO_2022
   Two major flaws are observed on GEBCO_2022 dataset, when comparing with accurate coastline
   *  Some areas considered as ocean in the dataset are  in fact on land.
