@@ -13,13 +13,13 @@ for the ocean, except for Antartica and Greenland where the Bedmachine-antarctic
 Bedmachine-greenland version 5 ([Morlighem, M. et al 2022b](https://doi.org/10.5067/GMEVBWFLWA7X))
 are prefered, allowing a consistent ice draft for under ice-shelf cavities.  
 High resolution coastline definition is also needed to setup an accurate land-sea mask. Coastline from Open Street Map are
-available as shapefile. This kind of file can be processed by Geographic Information System (for exampke QGIS program, 
+available as shapefile. This kind of file can be processed by Geographic Information System (for example QGIS program, 
 see below). 
 ### 2.1 Preprocessing of the BedMachine files.
 #### 2.1.1 Creating longitude and latitude variables
 BedMachine files correspond to a regular 500m resolution grid. Position of the grid points are given by `x` and `y` variables (in meters)  from a reference origin.
 For NEMOBAT, it is mandatory to have the location of the grid points in geographical coordinates (longitude, latitude).  The program `NSIDC_map_trf.f90`was written for this purpose in the
-[NEMOBAT](https://github.com/molines/NEMOBAT) package ( [NSIDC_map_trf.f90](https://github.com/molines/NEMOBAT/blob/master/INPUT_UTILITIES/NSIDC_map_trf.f90). Resulting files
+[NEMOBAT](https://github.com/molines/NEMOBAT) package ( [NSIDC_map_trf.f90](https://github.com/molines/NEMOBAT/blob/master/INPUT_UTILITIES/NSIDC_map_trf.f90)). Resulting files
 keep exactly the same content but have 2 extra 2D variables (nav_lon, nav_lat) describing the geographical position of the grid points.
 (BedMachineAntarctica-v3_lonlat-bed.nc and BedMachineGreenland-v5_lonlat.nc). These files are used as the basis for further processing.
 #### 2.1.2  Construction of the icedraft field
@@ -29,19 +29,19 @@ icedraft =  (surface - thickness ) on the ocean
 icedraft =  bed  elsewhere  
 
 
-A dedicated BATHY_TOOL program ( [bedmachine_idraft](https://github.com/molines/BATHY_TOOLS/blob/master/bedmachine_idraft.f90) )was written for this purpose. Resulting files are 
+A dedicated BATHY_TOOL program ( [bedmachine_idraft](https://github.com/molines/BATHY_TOOLS/blob/master/bedmachine_idraft.f90) )was written for this purpose. Resulting files are README.mdREADME.mdREADME.mdREADME.md
 BedMachineAntarctica-v3_lonlat-draft.nc BedMachineGreenland-v5_lonlat_draft.nc)  
 Note that for further processing missing value of the ice_draft are set to -9999.99 for GREENLAND and to 0 for ANTARCTICA (reasons for this choice are commented later). 
 
 #### 2.1.3 Mask files
 In the process of preparing the ice draft is is convenient to have a mask file for ice-covered areas and for ice-shelf only. BedMachine files have a 
-mask variable with values 0 1 2 or 4 depending on the type of surface (0: ocean ice_1:free_land 2:grounded_ice 3:floating_ice 4:lake_vostok) For Greenland, mask value 4 indicates area not belonging to Greenlans (*eg* Elsemeere Island, CA).  The dedicated program `bedmachine_mask.exe` from the   [BATHYTOOLS](https://github.com/molines/BATHY_TOOLS/) was written for for buildind ocean mask (corresponding to values 0 and 3 of the Bed machine mask and iceshelf mask (corresponding to value 3 of the Bed machine mask.). 
+mask variable with values 0 1 2 3 or 4 depending on the type of surface (0: ocean 1: ice_free_land 2: grounded_ice 3: floating_ice 4: lake_vostok) For Greenland, mask value 4 indicates area not belonging to Greenland (*eg* Elsemeere Island, CA).  The dedicated program `bedmachine_mask.exe` from the   [BATHYTOOLS](https://github.com/molines/BATHY_TOOLS/) was written for for building ocean mask (corresponding to values 0 and 3 of the Bed machine mask and iceshelf mask (corresponding to value 3 of the Bed machine mask.). 
 ### 2.2. Suspected flaws in GEBCO_2022
   Two major flaws are observed on GEBCO_2022 dataset, when comparing with accurate coastline
   *  Some areas considered as ocean in the dataset are  in fact on land.
   *  Some areas considered as land in the dataset are in fact in the ocean.
 
-  (give examples)
+  (give examples: BSAS, MARMARA, Netherland ...)
 ### 2.3 Proposed procedure for dataset correction (GEBCO_2022)
 #### 2.3.1 Use of QGIS 
 At this step, a geotiff GEBCO_2022 can be loaded in QGIS. The OSM coastline is loaded as a shape file and  it is easy to understand or to vizualize the flaws mentioned above. QGIS also offer the possibility to create a coastline mask at the resolution of the background
@@ -91,7 +91,7 @@ mask_drown -D -i bathy_in.nc -m 0 -x nav_lon -y nav_lev -v Bathymetry -o bathy_o
 ```
 
 #### 3.1.3 : manual checking  of the first guess
-This step is based on [BMGTOOLS](https://archimer.ifremer.fr/doc/00195/30646/) that allows an easy comparision of the data in the bathymetry with a very high resolution of the coast line. It is easy, but very time consuming task (manual). In particular, resolving small features such as fjords along the coast of Nordic countries or Patagonia is critical.
+This step is based on [BMGTOOLS](https://archimer.ifremer.fr/doc/00195/30646/) that allows an easy comparision of the data in the bathymetry with a very high resolution of the coast line. It is easy, but very time consuming task (manual). In particular, resolving small features such as fjords along the coast of Nordic countries or Patagonia is critical. This tool is also used to check the actual depth of particular sills (Denmark Strait, Faroes Bank Channel, Gibraltar Strait...) but also to check that the morphology of important Fracture Zone(FZ) is well represented (Romanche and Chain FZ, Gibbs FZ, Vema FZ ...) In annex to this document comparisons for thses particular areas are shown.
 
 The global file is too big to be easily managed by BMGtools. Therefore, the global file is splitted into 100 (10x 10) subdomains (as weel as the corresponding coordinate file), and each of the 100 files is visited for control. Once each subdomain is checked, a global corrected file is produced. (The tool for splitting and merging is [splitfile2](https://github.com/molines/JMMTOOLS/blob/master/TOOLS/splitfile2.f90) )
 
@@ -108,8 +108,11 @@ Note that BMGtools keep track of all the hand made modifications.  A program wil
 ### 3.6 Building the final bathymetry
 #### 3.6.1 solving the puzzle !
 #### 3.6.2 Manual check of the greenland coastline
+Again this task was realized with BMGTOOLS with caution, in particular for all the fjords. Good to notice that in BedMachine, there are many places where the depths is set to 1 meter, although nautical charts indicated soundings of several hundreds of meters... Those area will end up having the minimnum depth allowed in NEMO. When possible, in agreement with available nautical  charts, an effort has been made to represent the depths at fjord sills and ensure connexion with the deeper ocean. On the other hand it is very likely that depths assigned to ocean points in fjords are a bit arbitrary.
 #### 3.6.3 Manual check of critical depth : *eg:* Romanche Fracture zone, Gibbs Fracture zone, Vema Channel, etc...
 #### 3.6.4 Elimination of too small iceshelves
+For this purpose, two options were added in `cdfmkmask` from [CDFTOOLS](https://github.com/meom-group/CDFTOOLS.git), in order to build a mask representing
+clusters of values in a field, with a size (number of grid cells) or and area (area in km2 of the cluster) criteria.  Using this enhancement, we were able to eliminate iceshelve whose area was less than 40 km^2, and correct the bathymetry to stay coherent.
 #### 3.6.5 Final build !
 
 
