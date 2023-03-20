@@ -42,6 +42,7 @@ mask variable with values 0 1 2 3 or 4 depending on the type of surface (0: ocea
   *  Some areas considered as land in the dataset are in fact in the ocean.
 
   (give examples: BSAS, MARMARA, Netherland ...)
+  Example of the Netherland coast ![Netherland!](FIGURES/GEBCO-2022_MASK_NETHERLAND_000.png )
 ### 2.3 Proposed procedure for dataset correction (GEBCO_2022)
 #### 2.3.1 Use of QGIS 
 At this step, a geotiff GEBCO_2022 can be loaded in QGIS. The OSM coastline is loaded as a shape file and  it is easy to understand or to vizualize the flaws mentioned above. QGIS also offer the possibility to create a coastline mask at the resolution of the background
