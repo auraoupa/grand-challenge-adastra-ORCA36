@@ -113,7 +113,7 @@ Again this task was realized with BMGTOOLS with caution, in particular for all t
 #### 3.6.3 Manual check of critical depth : *eg:* Romanche Fracture zone, Gibbs Fracture zone, Vema Channel, etc...
 #### 3.6.4 Elimination of too small iceshelves
 For this purpose, two options were added in `cdfmkmask` from [CDFTOOLS](https://github.com/meom-group/CDFTOOLS.git), in order to build a mask representing
-clusters of values in a field, with a size (number of grid cells) or and area (area in km2 of the cluster) criteria.  Using this enhancement, we were able to eliminate iceshelve whose area was less than 40 km^2, and correct the bathymetry to stay coherent.
+clusters of values in a field, with a size (number of grid cells) or an area (area in km2 of the cluster) criteria.  Using this enhancement, we were able to eliminate iceshelve whose area was less than 40 km^2, and correct the bathymetry to stay coherent.
 #### 3.6.5 Final build !
 
 
