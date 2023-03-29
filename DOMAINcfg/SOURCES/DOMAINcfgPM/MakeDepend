@@ -1,0 +1,133 @@
+
+obj/agrif_connect.o: obj/agrif_parameters.o obj/agrif_profiles.o obj/dom_oce.o
+obj/agrif_connect.o: obj/domzgr.o
+
+obj/agrif_dom_update.o: obj/agrif_parameters.o obj/agrif_profiles.o
+obj/agrif_dom_update.o: obj/dom_oce.o obj/domzgr.o obj/lbclnk.o
+
+obj/agrif_domzgr.o: obj/agrif_profiles.o obj/dom_oce.o
+
+
+obj/agrif_parameters.o: obj/par_kind.o
+
+
+obj/agrif_recompute_scales.o: obj/dom_oce.o obj/lbclnk.o obj/lib_mpp.o
+
+obj/agrif_user.o: obj/agrif_parameters.o obj/agrif_profiles.o obj/dom_oce.o
+obj/agrif_user.o: obj/domain.o obj/in_out_manager.o obj/lbclnk.o obj/lib_mpp.o
+obj/agrif_user.o: obj/nemogcm.o obj/par_oce.o
+
+obj/bilinear_interp.o: obj/dombat_util.o
+
+obj/calendar.o: obj/errioipsl.o obj/stringop.o
+
+obj/daymod.o: obj/dom_oce.o obj/in_out_manager.o obj/ioipsl.o obj/iom.o
+obj/daymod.o: obj/phycst.o
+
+
+obj/depth_e3.o: obj/dom_oce.o obj/in_out_manager.o obj/lbclnk.o obj/lib_mpp.o
+
+
+obj/dom_oce.o: obj/par_oce.o
+
+obj/domain.o: obj/dom_oce.o obj/domclo.o obj/domhgr.o obj/dommsk.o obj/domzgr.o
+obj/domain.o: obj/in_out_manager.o obj/ioipsl.o obj/iom.o obj/lib_mpp.o
+obj/domain.o: obj/phycst.o
+
+obj/dombat.o: obj/agrif_parameters.o obj/bilinear_interp.o obj/dom_oce.o
+obj/dombat.o: obj/dombat_util.o obj/in_out_manager.o obj/iom.o obj/lbclnk.o
+obj/dombat.o: obj/lib_mpp.o
+
+
+obj/domcfg.o: obj/dom_oce.o obj/in_out_manager.o obj/lib_mpp.o obj/phycst.o
+
+obj/domclo.o: obj/dom_oce.o obj/domngb.o obj/domutl.o obj/in_out_manager.o
+obj/domclo.o: obj/lbclnk.o obj/lib_fortran.o obj/lib_mpp.o obj/phycst.o
+
+obj/domhgr.o: obj/dom_oce.o obj/domwri.o obj/in_out_manager.o obj/iom.o
+obj/domhgr.o: obj/lib_mpp.o obj/phycst.o
+
+obj/domisf.o: obj/dom_oce.o obj/domngb.o obj/domutl.o obj/in_out_manager.o
+obj/domisf.o: obj/lbclnk.o obj/lib_mpp.o
+
+obj/domisf.F90_occigen.o: obj/dom_oce.o obj/domngb.o obj/domutl.o
+obj/domisf.F90_occigen.o: obj/in_out_manager.o obj/lbclnk.o obj/lib_mpp.o
+
+obj/dommsk.o: obj/dom_oce.o obj/domisf.F90_occigen.o obj/domwri.o
+obj/dommsk.o: obj/in_out_manager.o obj/iom.o obj/lbclnk.o obj/lib_mpp.o
+obj/dommsk.o: obj/usrdef_fmask.o
+
+obj/domngb.o: obj/dom_oce.o obj/in_out_manager.o obj/lib_mpp.o obj/phycst.o
+
+obj/domutl.o: obj/dom_oce.o obj/domngb.o obj/in_out_manager.o obj/lbclnk.o
+obj/domutl.o: obj/lib_mpp.o
+
+obj/domwri.o: obj/dom_oce.o obj/in_out_manager.o obj/iom.o obj/lbclnk.o
+obj/domwri.o: obj/lib_mpp.o obj/phycst.o
+
+obj/domzgr.o: obj/agrif_domzgr.o obj/depth_e3.o obj/dom_oce.o obj/dombat.o
+obj/domzgr.o: obj/domisf.F90_occigen.o obj/in_out_manager.o obj/iom.o
+obj/domzgr.o: obj/lbclnk.o obj/lib_fortran.o obj/lib_mpp.o
+
+
+obj/in_out_manager.o: obj/nc4interface.o obj/par_oce.o
+
+obj/ioipsl.o: obj/calendar.o obj/errioipsl.o obj/stringop.o
+
+obj/iom.o: obj/dom_oce.o obj/domngb.o obj/in_out_manager.o obj/ioipsl.o
+obj/iom.o: obj/iom_def.o obj/iom_nf90.o obj/lbclnk.o obj/lib_fortran.o
+obj/iom.o: obj/lib_mpp.o obj/phycst.o
+
+obj/iom_def.o: obj/par_kind.o
+
+obj/iom_nf90.o: obj/dom_oce.o obj/in_out_manager.o obj/iom_def.o obj/lbclnk.o
+obj/iom_nf90.o: obj/lib_mpp.o
+
+
+
+
+
+
+obj/lbclnk.o: obj/dom_oce.o obj/in_out_manager.o obj/lbcnfd.o obj/lib_mpp.o
+obj/lbclnk.o: obj/par_oce.o
+
+obj/lbcnfd.o: obj/dom_oce.o obj/in_out_manager.o
+
+obj/lib_fortran.o: obj/dom_oce.o obj/in_out_manager.o obj/lbclnk.o
+obj/lib_fortran.o: obj/lib_mpp.o obj/par_oce.o
+
+
+obj/lib_mpp.o: obj/dom_oce.o obj/in_out_manager.o obj/lbcnfd.o
+
+obj/make_domain_cfg.o: obj/nemogcm.o
+
+obj/mathelp.o: obj/errioipsl.o obj/stringop.o
+
+
+
+
+
+obj/mppini.o: obj/dom_oce.o obj/in_out_manager.o obj/ioipsl.o obj/iom.o
+obj/mppini.o: obj/lbcnfd.o obj/lib_mpp.o
+
+
+obj/nemogcm.o: obj/agrif_connect.o obj/agrif_dom_update.o
+obj/nemogcm.o: obj/agrif_recompute_scales.o obj/dom_oce.o obj/domain.o
+obj/nemogcm.o: obj/domcfg.o obj/in_out_manager.o obj/iom.o obj/lbcnfd.o
+obj/nemogcm.o: obj/lib_fortran.o obj/lib_mpp.o obj/mppini.o obj/phycst.o
+
+
+obj/par_oce.o: obj/par_kind.o
+
+obj/phycst.o: obj/in_out_manager.o obj/par_oce.o
+
+obj/step_oce.o: obj/daymod.o obj/dom_oce.o obj/in_out_manager.o obj/iom.o
+obj/step_oce.o: obj/lbclnk.o
+
+
+obj/usrdef_fmask.o: obj/dom_oce.o obj/in_out_manager.o obj/lbclnk.o
+obj/usrdef_fmask.o: obj/lib_mpp.o
+
+
+obj/agrif_modutil.mod: obj/dombat_util.o
+obj/domisf.mod: obj/domisf.F90_occigen.o
