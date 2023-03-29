@@ -12,7 +12,7 @@ For the compilation of the tools, it is recommended to use the `maketools` avail
 Once DOMAINcfgPM tool is compiled (*ie* `make_domain_cfg.exe` available), the required files are:
   * a coordinate file for the horizontal grid : `eORCA_R36_coordinates_v3.3_nemo4.0.x.noz.nc`
   * a bathymetric file created in the BUILD_BATHY (long) process : `eORCA_R36_Bathymetry_v4.0.3_40km.nc`
-  * a namelist for the input parameters of `make_domain_cfg.exe` : [namelist_dom.eORCA36.L121-MAA2023](SOURCES/NAMELIST/namelist_dom.eORCA36.L121-MAA2023). Note that this namelist should be thoroughly edited to fit the wishes decided for the model grid.
+  * a namelist for the input parameters of `make_domain_cfg.exe` : [namelist_dom.eORCA36.L121-MAA2023](NAMELIST/namelist_dom.eORCA36.L121-MAA2023). Note that this namelist should be thoroughly edited to fit the wishes decided for the model grid.
 ### 3.2 Running  `make_domain_cfg.exe`
  This program is a parallel program that should be run acordingly. For eORCA36, on Jean-Zay, we made a first try with 400 cores and we had an `out of memory` error. Going to 800 cores was OK. For reference we use the following script, in a directory where required files are available:
 
