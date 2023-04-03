@@ -6,14 +6,14 @@ Candidature à envoyer avant le 3 avril 2023, période de calcul du 1er mai au 3
 
 ## Actions d'ici début avril
 
-  - [ ] Elaborer stratégie de run et calendrier
-  - [ ] Quantifier précisément CPU et stockage
-  - [ ] Ecrire la candidature : [premier jet](https://docs.google.com/document/d/1sYsiWFdsBWbVlIHc4_Rdj9_NR8Cs5YrWHw384CFlBQ4/edit?usp=sharing)
+  - [x] Elaborer stratégie de run et calendrier
+  - [x] Quantifier précisément CPU et stockage
+  - [x] Ecrire la candidature : [premier jet](https://docs.google.com/document/d/1sYsiWFdsBWbVlIHc4_Rdj9_NR8Cs5YrWHw384CFlBQ4/edit?usp=sharing)
   
   
 ## Actions d'ici début mai 
 
-  -  [ ] nouvelle bathymétrie et correction trait de côte (gros travail de Pierre Mathiot et Jean-Marc Molines)
+  -  [x] nouvelle bathymétrie et correction trait de côte (gros travail de Pierre Mathiot et Jean-Marc Molines)
   
 En attendant que la bathy soit prête :
 
