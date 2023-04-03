@@ -12,11 +12,13 @@ module load cray-netcdf-hdf5parallel/4.9.0.1
 
 ### Compilation xios
 
+#### Download xios
+
 ```bash
 svn co https://forge.ipsl.jussieu.fr/ioserver/svn/XIOS3/branches/xios-3.0-beta 
 ```
 
-### Arch files
+#### Arch files
 
 - arch-Cray_Adastra.env :
 
@@ -69,4 +71,10 @@ HDF5_LIB="-lhdf5_hl -lhdf5 -lz -lcurl"
 OASIS_INCDIR=""
 OASIS_LIBDIR=""
 OASIS_LIB=""
+```
+
+#### Compile
+
+```bash
+./make_xios --full --arch Cray_Adastra
 ```
