@@ -56,7 +56,7 @@ module load cray-netcdf-hdf5parallel/4.9.0.1
 ```bash
 NETCDF_INCDIR="-I${NETCDF_DIR}/include"
 NETCDF_LIBDIR="-L${NETCDF_DIR}/lib"
-NETCDF_LIB="-lnetcdf -lnetcdff
+NETCDF_LIB="-lnetcdf -lnetcdff"
 
 MPI_INCDIR=""
 MPI_LIBDIR=""
