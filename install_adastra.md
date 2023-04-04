@@ -17,6 +17,7 @@ module load cray-netcdf-hdf5parallel/4.9.0.1
 ```bash
 svn co https://forge.ipsl.jussieu.fr/ioserver/svn/XIOS3/branches/xios-3.0-beta 
 ```
+backup : ```svn co http://forge.ipsl.jussieu.fr/ioserver/svn/XIOS/trunk@2430 xios-trunk-2430```
 
 #### Arch files
 
