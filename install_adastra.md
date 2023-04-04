@@ -78,3 +78,55 @@ OASIS_LIB=""
 ```bash
 ./make_xios --full --arch Cray_Adastra
 ```
+
+### Compilation NEMO
+
+#### Download
+
+```bash
+commit=389a917643f84804f6c7c6cb61c33007bc9a7b20
+git clone https://forge.nemo-ocean.eu/nemo/nemo.git NEMO4
+cd NEMO4
+git checkout $commit
+```
+
+#### Arch file
+
+  - arch-X64_ADASTRA-Cray.fcm :
+ 
+```bash
+%NCDF_HOME           $NETCDF_DIR
+%HDF5_HOME           $HDF5_DIR
+%XIOS_HOME           /lus/work/CT1/ige2071/aalbert/DEV/xios-3.0-beta
+
+%NCDF_INC            -I%NCDF_HOME/include -I%HDF5_HOME/include
+%NCDF_LIB            -L%HDF5_HOME/lib -L%NCDF_HOME/lib -lnetcdff -lnetcdf -lhdf5_hl -lhdf5 -lz
+%XIOS_INC            -I%XIOS_HOME/inc
+%XIOS_LIB            -L%XIOS_HOME/lib -lxios
+
+%CPP                 cpp -Dkey_nosignedzero
+%FC                  ftn
+%FCFLAGS             -em -s integer32 -s real64 -O0 -hflex_mp=intolerant -N1023
+%FFLAGS              -em -s integer32 -s real64 -O0 -hflex_mp=intolerant -N1023
+%LD                  CC -Wl,"--allow-multiple-definition"
+%FPPFLAGS            -P -traditional
+%LDFLAGS             -lmpifort_cray
+%AR                  ar
+%ARFLAGS             -r
+%MK                  gmake
+%USER_INC            %XIOS_INC %NCDF_INC
+%USER_LIB            %XIOS_LIB %NCDF_LIB
+
+%CC                  cc -Wl,"--allow-multiple-definition"
+%CFLAGS              -O0 -Wl,"--allow-multiple-definition"
+bld::tool::fc_modsearch -J
+
+```
+
+#### Compile
+
+ - add ```key_xios3``` and ```key_vco_1d3d``` in CPP.keys of WED025_TEST test case 
+
+```bash
+./makenemo -n WED025_TEST -r WED025 -m X64_ADASTRA-Cray -j 1 
+```
