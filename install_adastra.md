@@ -150,3 +150,7 @@ git clone https://forge.nemo-ocean.eu/nemo/nemo.git NEMO4
 cd NEMO4
 git checkout $commit
 ```
+
+#### Customize
+
+Following [DCM's tutorial](https://github.com/meom-group/DCM/blob/4.2/DOC/dcm_getting_started.md)
