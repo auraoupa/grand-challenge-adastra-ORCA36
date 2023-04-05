@@ -93,7 +93,7 @@ git checkout $commit
 
 #### Arch file
 
-  - arch-X64_ADASTRA-Cray.fcm :
+  - arch-X64_ADASTRA-Cray_xios3.fcm :
  
 ```bash
 %NCDF_HOME           $NETCDF_DIR
@@ -129,5 +129,5 @@ bld::tool::fc_modsearch -J
  - add ```key_xios3``` and ```key_vco_1d3d``` in CPP.keys of WED025_TEST test case 
 
 ```bash
-./makenemo -n WED025_TEST -r WED025 -m X64_ADASTRA-Cray -j 1 
+./makenemo -n WED025_TEST -r WED025 -m X64_ADASTRA-Cray-xios3 -j 1 
 ```
