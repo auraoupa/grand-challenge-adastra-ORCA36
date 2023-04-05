@@ -80,7 +80,7 @@ OASIS_LIB=""
 ./make_xios --full --arch Cray_Adastra
 ```
 
-### Compilation NEMO
+### Compilation d'un NEMO case
 
 #### Download
 
@@ -130,4 +130,23 @@ bld::tool::fc_modsearch -J
 
 ```bash
 ./makenemo -n WED025_TEST -r WED025 -m X64_ADASTRA-Cray-xios3 -j 1 
+```
+
+### Installation DCM
+
+#### Download
+
+ - DCM :
+
+```bash
+git clone -b 4.2 git@github.com:meom-group/DCM.git DCM_4.2
+```
+  - NEMOREF :
+
+```bash
+cd DCM_4.2/DCMTOOLS/NEMOREF
+commit=389a917643f84804f6c7c6cb61c33007bc9a7b20
+git clone https://forge.nemo-ocean.eu/nemo/nemo.git NEMO4
+cd NEMO4
+git checkout $commit
 ```
