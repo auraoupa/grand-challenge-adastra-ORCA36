@@ -145,7 +145,7 @@ git clone -b 4.2 git@github.com:meom-group/DCM.git DCM_4.2
 
 ```bash
 cd DCM_4.2/DCMTOOLS/NEMOREF
-commit=389a917643f84804f6c7c6cb61c33007bc9a7b20
+commit=9a594bcd355bc02a5d2647899e3863a1da682166
 git clone https://forge.nemo-ocean.eu/nemo/nemo.git NEMO4
 cd NEMO4
 git checkout $commit
