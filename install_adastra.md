@@ -2,6 +2,8 @@
 
 Avec les compilateurs natifs Cray et en s'inpirant du travail de Adam Blaker et Andrew Coward : https://github.com/hpc-uk/build-instructions/blob/main/apps/NEMO/
 
+Plus bas le back-up en utilisant intel.
+
 ## Les modules
 
 ```bash
@@ -154,3 +156,85 @@ git checkout $commit
 #### Customize
 
 Following [DCM's tutorial](https://github.com/meom-group/DCM/blob/4.2/DOC/dcm_getting_started.md)
+
+# Same but using intel
+
+## Les modules
+
+```bash
+module load intel/2022.1.0
+module load cray-hdf5-parallel/1.12.2.1
+module load cray-parallel-netcdf/1.12.3.1
+```
+
+### Compilation xios
+
+#### Download xios
+
+```bash
+svn co http://forge.ipsl.jussieu.fr/ioserver/svn/XIOS/trunk@2430 xios-trunk-2430
+```
+
+#### Arch files
+
+- arch-intel_Adastra.env :
+
+```bash
+module load intel/2022.1.0
+module load cray-hdf5-parallel/1.12.2.1
+module load cray-parallel-netcdf/1.12.3.1
+```
+
+- arch-intel_Adastra.fcm :
+
+```bash
+%CCOMPILER      mpiicc
+%FCOMPILER      mpiifort
+%LINKER         mpiifort  -nofor-main
+
+%BASE_CFLAGS    -diag-disable 1125 -diag-disable 279 -std=c++11
+%PROD_CFLAGS    -O3 -D BOOST_DISABLE_ASSERTS
+%DEV_CFLAGS     -g -traceback
+%DEBUG_CFLAGS   -DBZ_DEBUG -g -traceback -fno-inline
+
+%BASE_FFLAGS    -D__NONE__
+%PROD_FFLAGS    -O3
+%DEV_FFLAGS     -g -O2 -traceback
+%DEBUG_FFLAGS   -g -traceback
+
+%BASE_INC       -D__NONE__
+%BASE_LD        -lstdc++
+
+%CPP            mpiicc -EP
+%FPP            cpp -P
+%MAKE           gmake
+```
+
+- arch-intel_Adastra.path :
+
+:warning:  Problem : netcdf and hdf not compiled with yet!! :warning:
+
+```bash
+NETCDF_INCDIR="-I${NETCDF_DIR}/include"
+NETCDF_LIBDIR="-L${NETCDF_DIR}/lib"
+NETCDF_LIB="-lnetcdf -lnetcdff"
+
+MPI_INCDIR=""
+MPI_LIBDIR=""
+MPI_LIB=""
+
+HDF5_INCDIR="-I${HDF5_DIR}/include"
+HDF5_LIBDIR="-L${HDF5_DIR}/lib"
+HDF5_LIB="-lhdf5_hl -lhdf5 -lz -lcurl"
+
+OASIS_INCDIR=""
+OASIS_LIBDIR=""
+OASIS_LIB=""
+```
+
+#### Compile
+
+```bash
+./make_xios --full --arch intel_Adastra
+```
+
