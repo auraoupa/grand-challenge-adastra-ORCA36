@@ -31,7 +31,7 @@ En attendant que la bathy soit prête :
 Une fois la nouvelle bathy prête :
   
   - [ ] créer domain.nc
-  - [ ] [refaire les runoffs](runoffs.md), à partir des données ISBA cf [procédure IMHOTEP](https://github.com/molines/IMHOTEP/tree/master/eORCA025/BUILD/RUNOFF_ISBA)
+  - [ ] [refaire les runoffs](runoffs.md), à partir des [données ISBA](https://github.com/auraoupa/grand-challenge-adastra-ORCA36/tree/main/eORCA05/BUILD/RUNOFF)
   - [ ] récupérer tous les fichiers de Clément Bricaud (loading de marée, chla ...)
   - [ ] créer état initial pour les cavités (avec l'aide de Pierre Mathiot)
   - [ ] interpolation état initial (WOA ? moyenne mensuelle réanalyses GLORYS12 ?)
