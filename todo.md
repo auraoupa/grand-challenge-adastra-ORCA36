@@ -25,7 +25,7 @@ En attendant que la bathy soit prête :
   - [ ] implémenter run barotrope maquette (discussion avec Julien et Clément Ubelmann)
   - [ ] élaborer stratégie de sorties et quantifier le stockage
   - [ ] [compiler xios oasis nemo sur Adastra avec compilateurs natifs (check infos fournies par Adam Blaker)](install_adastra.md)
-  - [ ] quand tout est en place porter maquette sur ROME (AMD nodes) pour mieux évaluer performances
+ ~~ - [ ] quand tout est en place porter maquette sur ROME (AMD nodes) pour mieux évaluer performances ~~
 
 Une fois la nouvelle bathy prête :
   
