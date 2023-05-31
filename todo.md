@@ -30,11 +30,11 @@ En attendant que la bathy soit prête :
 
 Une fois la nouvelle bathy prête :
   
-  - [ ] créer domain.nc
-  - [ ] [refaire les runoffs](runoffs.md), à partir des [données ISBA](https://github.com/auraoupa/grand-challenge-adastra-ORCA36/tree/main/eORCA05/BUILD/RUNOFF)
+  - [x] créer domain.nc
+  - [x] [refaire les runoffs](runoffs.md), à partir des [données ISBA](https://github.com/auraoupa/grand-challenge-adastra-ORCA36/tree/main/eORCA05/BUILD/RUNOFF)
   - [ ] récupérer tous les fichiers de Clément Bricaud (loading de marée, chla ...)
   - [ ] créer état initial pour les cavités (avec l'aide de Pierre Mathiot)
   - [ ] interpolation état initial (WOA ? moyenne mensuelle réanalyses GLORYS12 ?)
   - [ ] calcul des poids pour forçages ou interpolation sur la grille (JRA55 ou ERA5 ?)
-  - [ ] quelques pas de temps sur ROME ? (292 608 coeurs)
+  ~- [ ] quelques pas de temps sur ROME ? (292 608 coeurs)~
   
