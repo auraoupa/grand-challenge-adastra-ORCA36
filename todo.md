@@ -8,7 +8,7 @@ Candidature à envoyer avant le 3 avril 2023, période de calcul du 1er mai au 3
 
   - [x] Elaborer stratégie de run et calendrier
   - [x] Quantifier précisément CPU et stockage
-  - [x] Ecrire la candidature : [premier jet](https://docs.google.com/document/d/1sYsiWFdsBWbVlIHc4_Rdj9_NR8Cs5YrWHw384CFlBQ4/edit?usp=sharing)
+  - [x] Ecrire la candidature : [premier jet](https://docs.google.com/document/d/1sYsiWFdsBWbVlIHc4_Rdj9_NR8Cs5YrWHw384CFlBQ4/edit?usp=sharing), [version envoyée](https://cloud.univ-grenoble-alpes.fr/s/we26KHSYjbrAqkM)
   
   
 ## Actions d'ici début mai 
