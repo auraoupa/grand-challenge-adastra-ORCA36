@@ -36,5 +36,6 @@ Une fois la nouvelle bathy prête :
   - [ ] créer état initial pour les cavités (avec l'aide de Pierre Mathiot)
   - [ ] interpolation état initial (WOA ? moyenne mensuelle réanalyses GLORYS12 ?)
   - [ ] calcul des poids pour forçages ou interpolation sur la grille (JRA55 ou ERA5 ?)
+  
   ~- [ ] quelques pas de temps sur ROME ? (292 608 coeurs)~
   
