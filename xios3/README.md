@@ -1,6 +1,7 @@
 # XIOS3 sur Adastra
 
-Adastra : Cray HPE 
+Adastra : Cray HPE machine
+
 Modules : 
 ```
         module purge
@@ -19,7 +20,16 @@ Currently Loaded Modules:
   3) craype-network-ofi   6) cce/15.0.0          9) cray-mpich/8.1.21      12) cpe/22.11
 ```
 
-XIOS : ``` svn co https://forge.ipsl.jussieu.fr/ioserver/svn/XIOS3/branches/xios-3.0-beta```
+XIOS : ``` svn co https://forge.ipsl.jussieu.fr/ioserver/svn/XIOS3/branches/xios-3.0-beta``` (Revision: 2512)
   - [arch.env](arch-Adastra_Cray.env)
   - [arch.path](arch-Adastra_Cray.path)
   - [arch.fcm](arch-Adastra_Cray.fcm)
+
+NEMO : ``` ``` (commit 389a917643f84804f6c7c6cb61c33007bc9a7b20)
+  - [arch](arch-Adastra_Cray_xios3.fcm)
+  - [cpp keys](cpp_WED025_TEST.fcm)
+
+Simulation :
+ - [WED025](https://zenodo.org/record/6817000#.Y065iOxBztE) test case 
+ - [job](job_launch_NEMO.ksh), [mpmd](mpmd.conf), [script_nemo](exec_nemo.sh), [script_xios](exec_xios.sh)
+ - outputs : [nemo error file](nemo_.err)
