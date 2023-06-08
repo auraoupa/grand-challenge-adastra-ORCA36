@@ -1,6 +1,8 @@
 # XIOS3 sur Adastra
 
-Adastra : Cray HPE machine
+Adastra : Cray HPE machine 
+
+like ARCHER in UK [build instructions](https://github.com/hpc-uk/build-instructions/tree/main/apps/NEMO)
 
 Modules : 
 ```
