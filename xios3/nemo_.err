@@ -1,0 +1,8 @@
+MPICH ERROR [Rank 26] [job id 251570.0] [Tue Jun  6 17:47:13 2023] [c1385] -AAbort(201934085) (rank 14 in comm 0): Fatal error in PMPI_Comm_rank: Invalid communicator, error stack:
+PMPI_Comm_rank(109): MPI_Comm_rank(comm=0x0, rank=0x7ffd37650e20) failed
+PMPI_Comm_rank(65).: Invalid communicatoababortinaborting job:
+Fatal error in PMPI_Comm_rank: Invalid communicator, error stack:
+PMPI_Comm_rank(109): MPI_Comm_rank(comm=0x1000000, rank=0x7ffde9cf4a20) failed
+PMPI_Comm_rank(65).: Invalid communicator
+r
+
