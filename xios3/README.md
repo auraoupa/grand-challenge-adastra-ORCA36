@@ -2,7 +2,7 @@
 
 Adastra : Cray HPE machine 
 
-like ARCHER in UK [build instructions](https://github.com/hpc-uk/build-instructions/tree/main/apps/NEMO)
+cf [build instructions](https://github.com/hpc-uk/build-instructions/tree/main/apps/NEMO) for ARCHER machine in UK
 
 Modules : 
 ```
