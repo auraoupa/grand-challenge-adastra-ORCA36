@@ -25,7 +25,7 @@ XIOS : ``` svn co https://forge.ipsl.jussieu.fr/ioserver/svn/XIOS3/branches/xios
   - [arch.path](arch-Adastra_Cray.path)
   - [arch.fcm](arch-Adastra_Cray.fcm)
 
-NEMO : ``` ``` (commit 389a917643f84804f6c7c6cb61c33007bc9a7b20)
+NEMO : ```git clone https://forge.nemo-ocean.eu/nemo/nemo.git ``` (commit 389a917643f84804f6c7c6cb61c33007bc9a7b20)
   - [arch](arch-Adastra_Cray_xios3.fcm)
   - [cpp keys](cpp_WED025_TEST.fcm)
 
