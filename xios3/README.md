@@ -34,5 +34,5 @@ NEMO : ```git clone https://forge.nemo-ocean.eu/nemo/nemo.git ``` (commit 389a91
 Simulation :
  - [WED025](https://zenodo.org/record/6817000#.Y065iOxBztE) test case 
  - [job](job_launch_NEMO.ksh), [mpmd](mpmd.conf), [script_nemo](exec_nemo.sh), [script_xios](exec_xios.sh)
- - fichiers xml : [context_nemo.xml], domain_def_nemo.xml, field_def_nemo-ice.xml, field_def_nemo-oce.xml, file_def_nemo-ice.xml, file_def_nemo-oce.xml, grid_def_nemo.xml, iodef.xml, 
+ - fichiers xml : [context_nemo.xml](context_nemo.xml), [domain_def_nemo.xml](domain_def_nemo.xml), [field_def_nemo-ice.xml](field_def_nemo-ice.xml), [field_def_nemo-oce.xml](field_def_nemo-oce.xml), [file_def_nemo-ice.xml](file_def_nemo-ice.xml), [file_def_nemo-oce.xml](file_def_nemo-oce.xml), [grid_def_nemo.xml](grid_def_nemo.xml), [iodef.xml](iodef.xml)
  - outputs : [nemo error file](nemo_.err)
