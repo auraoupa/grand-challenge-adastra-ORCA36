@@ -24,7 +24,7 @@ En attendant que la bathy soit prête :
   - [ ] implémenter skin temperature (demander à Laurent Brodeau)
   - [ ] implémenter run barotrope maquette (discussion avec Julien et Clément Ubelmann)
   - [ ] élaborer stratégie de sorties et quantifier le stockage
-  - [ ] [compiler xios oasis nemo sur Adastra avec compilateurs natifs (check infos fournies par Adam Blaker)](install_adastra.md)
+  - [x] [compiler xios oasis nemo sur Adastra avec compilateurs natifs (check infos fournies par Adam Blaker)](install_adastra.md)
   
  ~- [ ] quand tout est en place porter maquette sur ROME (AMD nodes) pour mieux évaluer performances~
 
@@ -32,9 +32,9 @@ Une fois la nouvelle bathy prête :
   
   - [x] créer domain.nc
   - [x] [refaire les runoffs](runoffs.md), à partir des [données ISBA](https://github.com/auraoupa/grand-challenge-adastra-ORCA36/tree/main/eORCA05/BUILD/RUNOFF)
-  - [ ] récupérer tous les fichiers de Clément Bricaud (loading de marée, chla ...)
-  - [ ] créer état initial pour les cavités (avec l'aide de Pierre Mathiot)
-  - [ ] interpolation état initial (WOA ? moyenne mensuelle réanalyses GLORYS12 ?)
+  - [x] récupérer tous les fichiers de Clément Bricaud (loading de marée, chla ...)
+  - [x] créer état initial pour les cavités (avec l'aide de Pierre Mathiot)
+  - [x] interpolation état initial (WOA ? moyenne mensuelle réanalyses GLORYS12 ?)
   - [ ] calcul des poids pour forçages ou interpolation sur la grille (JRA55 ou ERA5 ?)
   
   ~- [ ] quelques pas de temps sur ROME ? (292 608 coeurs)~
