@@ -75,7 +75,7 @@ adjusting `jpni, jpnj` and `jpnij`.
  7. Move the final file to the `eORCA025.L121-I` directory:
 
    ```
-   mv domain_cfg.nc4  $WORK/eORCA05.L121/eORCA05.L121-I/eORCA025.L121_domain_cfg.nc
+   mv domain_cfg.nc4  $WORK/eORCA05.L121/eORCA05.L121-I/eORCA05.L121_domain_cfg.nc
    ```
 
  8. **YOU ARE DONE !**
