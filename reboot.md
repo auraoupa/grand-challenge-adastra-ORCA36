@@ -128,4 +128,9 @@ OASIS_LIB=""
 %CC                  cc
 %CFLAGS              -O0
 ```
+## Run
 
+### Maquette eORCA05
+
+ - in ```/lus/work/NAT/gda2307/aalbert/DEV/DCM_4.2.1/DCMTOOLS/NEMOREF/NEMO4/cfgs/eORCA05.L121_AAAi001/EXP00``` : test avec état initial MP026, fichiers 4.2, forçages ERA5
+ - fichiers in ```/lus/work/NAT/gda2307/aalbert/eORCA05.L121/eORCA05.L121-I``` et ```/lus/work/NAT/gda2307/aalbert/DATA_FORCING/ERA5/```
