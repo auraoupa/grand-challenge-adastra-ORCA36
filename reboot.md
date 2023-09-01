@@ -134,3 +134,14 @@ OASIS_LIB=""
 
  - in ```/lus/work/NAT/gda2307/aalbert/DEV/DCM_4.2.1/DCMTOOLS/NEMOREF/NEMO4/cfgs/eORCA05.L121_AAAi001/EXP00``` : test avec état initial MP026, fichiers 4.2, forçages ERA5
  - fichiers in ```/lus/work/NAT/gda2307/aalbert/eORCA05.L121/eORCA05.L121-I``` et ```/lus/work/NAT/gda2307/aalbert/DATA_FORCING/ERA5/```
+ - résumé des expériences :
+
+Exp | Init | Forcing | Dt | Result
+---|--|--|-------------------
+EXP00 | MP026 | ERA5 | 1200 | ssh/sal/u e+308 at 0,0 & 193,39,38, kt=1
+EXP01 | MP026 nomask | ERA5 | 1200 |
+EXP01 | MP026 | JRA | 1200 |
+
+
+   
+   
