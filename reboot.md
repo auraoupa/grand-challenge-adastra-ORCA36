@@ -136,6 +136,14 @@ OASIS_LIB=""
  - fichiers in ```/lus/work/NAT/gda2307/aalbert/eORCA05.L121/eORCA05.L121-I``` et ```/lus/work/NAT/gda2307/aalbert/DATA_FORCING/ERA5/```
  - résumé des expériences :
 
+
+| Aligné à gauche  | Centré          | Aligné à droite |
+| :--------------- |:---------------:| -----:|
+| Aligné à gauche  |   ce texte        |  Aligné à droite |
+| Aligné à gauche  | est             |   Aligné à droite |
+| Aligné à gauche  | centré          |    Aligné à droite |
+
+
 | Exp | Init | Forcing | Dt | Result |
 |EXP00 | MP026 | ERA5 | 1200 | ssh/sal/u e+308 at 0,0 & 193,39,38, kt=1 |
 |EXP01 | MP026 nomask | ERA5 | 1200 | |
