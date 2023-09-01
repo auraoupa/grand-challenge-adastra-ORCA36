@@ -134,21 +134,17 @@ OASIS_LIB=""
 
  - in ```/lus/work/NAT/gda2307/aalbert/DEV/DCM_4.2.1/DCMTOOLS/NEMOREF/NEMO4/cfgs/eORCA05.L121_AAAi001/EXP00``` : test avec état initial MP026, fichiers 4.2, forçages ERA5
  - fichiers in ```/lus/work/NAT/gda2307/aalbert/eORCA05.L121/eORCA05.L121-I``` et ```/lus/work/NAT/gda2307/aalbert/DATA_FORCING/ERA5/```
+ - état initial 0MP026 construit sur Jean-Zay : ```/gpfswork/rech/cli/rote001/eORCA05.L121/eORCA05.L121-I/MKINIT-OMP026```, plots : http://ige-meom-drakkar.univ-grenoble-alpes.fr/DRAKKAR/eORCA36.L121/all_plots_init_eORCA36-MP026.png
+ - fichier domain construit sur jean-zay : ```/gpfswork/rech/cli/rote001/eORCA05.L121/eORCA05.L121-I/MK_DOMAIN```
  - résumé des expériences :
-
-
-| Aligné à gauche  | Centré          | Aligné à droite |
-| :--------------- |:---------------:| -----:|
-| Aligné à gauche  |   ce texte        |  Aligné à droite |
-| Aligné à gauche  | est             |   Aligné à droite |
-| Aligné à gauche  | centré          |    Aligné à droite |
 
 
 | Exp | Init | Forcing | Dt | Result |
 | --------------- |---------------|-----|--|--|
 |EXP00 | MP026 | ERA5 | 1200 | ssh/sal/u e+308 at 0,0 & 193,39,38, kt=1 |
+|EXP00b | MP026 | ERA5 | 60 |  |
 |EXP01 | MP026 nomask | ERA5 | 1200 | |
-|EXP01 | MP026 | JRA | 1200 | |
+|EXP02 | MP026 | JRA | 1200 | |
 
 
    
