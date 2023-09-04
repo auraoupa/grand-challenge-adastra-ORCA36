@@ -139,12 +139,14 @@ OASIS_LIB=""
  - résumé des expériences :
 
 
-| Exp | Init | Forcing | Dt | Result |
-| --------------- |---------------|-----|--|--|
-|EXP00 | MP026 | ERA5 | 1200 | ssh/sal/u e+308 at 0,0 & 193,39,38, kt=1 |
-|EXP00b | MP026 | ERA5 | 60 |  |
-|EXP01 | MP026 nomask | ERA5 | 1200 | |
-|EXP02 | MP026 | JRA | 1200 | |
+| Exp | Init | Forcing | Dt | Ice cavities | Result |
+| --------------- |---------------|-----|--|--|--|
+|EXP00 | MP026 | ERA5 | 1200 | Yes | ssh/sal/u e+308 at 0,0 & 193,39,38, kt=1 |
+|EXP00b | MP026 | ERA5 | 60 | Yes | sal e+308 at 0,0 & 193,39,38, kt=1 |
+|EXP01 | MP026 nomask | ERA5 | 1200 | Yes | |
+|EXP02 | MP026 | JRA | 1200 | Yes | |
+|EXP03 | WOA | JRA | 1200 | Yes | |
+|EXP03 | WOA | JRA | 1200 | No | |
 
 
    
