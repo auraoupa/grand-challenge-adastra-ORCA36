@@ -140,7 +140,7 @@ OASIS_LIB=""
 
 
 | Conf | Exp | Init | Forcing | Dt | Ice cavities | Vertical levels | Ice init | Runoffs | Debug options | Result |
-| --------------- |---------------|-----|--|--|--|--|--|--|--|
+| --------------- |---------------|-----|--|--|--|--|--|--|--|--|
 |AAi001 | EXP00 | MP026 | ERA5 | 1200 | Yes | 121 | from SST | ISBA AA | None | ssh/sal/u -1.7977+308 at 0,0 & 193,39,38, kt=1 |
 |AAi001 |EXP00b | MP026 | ERA5 | 60 | Yes | 121 | from SST | ISBA AA | None |sal e+308 at 0,0 & 193,39,38, kt=1 (ssh,u ok)|
 |AAi001 |EXP01 | MP026 nomask | ERA5 | 1200 | Yes | 121 | from SST | ISBA AA | None | segmentation fault at kt=2 |
