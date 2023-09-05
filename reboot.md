@@ -140,20 +140,20 @@ OASIS_LIB=""
 
 
 | Conf | Exp | Init | Forcing | Dt | Ice cavities | Vertical levels | Ice init | Runoffs | Debug options | Result |
-| --------------- |---------------|-----|--|--|--|--|--|--|--|--|
-|AAi001 | EXP00 | MP026 | ERA5 | 1200 | Yes | 121 | from SST | ISBA AA | None | ssh/sal/u -1.7977+308 at 0,0 & 193,39,38, kt=1 |
-|AAi001 |EXP00b | MP026 | ERA5 | 60 | Yes | 121 | from SST | ISBA AA | None |sal e+308 at 0,0 & 193,39,38, kt=1 (ssh,u ok)|
-|AAi001 |EXP01 | MP026 nomask | ERA5 | 1200 | Yes | 121 | from SST | ISBA AA | None | segmentation fault at kt=2 |
-|AAi001d |EXP00 | MP026 nomask | ERA5 | 1200 | Yes | 121 | from SST | ISBA AA | -g -fpe0 -CB -traceback | floating invalid in icevar.f90 |
-|AAi001d |EXP01 | MP026 nomask | ERA5 | 1200 | Yes | 121 | None | ISBA AA | -g -fpe0 -CB -traceback | floating invalid in iceistate.f90 |
-|AAi001d |EXP01 | MP026 nomask | ERA5 | 1200 | Yes | 121 | None | ISBA AA | -g -CB -traceback | Subscript #3 of the array PE3 has value 0 which is less than the lower bound of 1 in isftbl.f90 |
-|AAi001 |EXP02 | MP026 | ERA5 | 1200 | No | 121 | from SST |  ISBA AA |None | ssh/sal/u -1.7977+308 at 0,0 & 187,79,1, kt=1 |
-|AAi001 |EXP03 | WOA | JRA55 | 1200 | Yes | 75 | from SST | ISBA AA | None | kt 4 |U|   max   10.72     at i j k 493 487  1 MPI rank 150 |
-|AAi001 |EXP03b | WOA | JRA55 | 600 | Yes | 75 | from SST | ISBA JMM| None | OK |
-|AAi001 |EXP03c | WOA_4.2 | JRA55_4.2 | 600 | Yes | 75_4.2 | from SST | ISBA JMM| None | OK |
-|AAi001 |EXP04 | WOA_4.2 | ERA5_4.2 | 600 | Yes | 75_4.2 | from SST | ISBA JMM | None | OK |
-|AAi001 |EXP05 | WOA_4.2| ERA5_4.2 | 600 | Yes | 75_4.2 | from SST | ISBA AA | None | OK |
-|AAi001 |EXP06 | MP026_4.2| ERA5_4.2 | 600 | Yes | 75_4.2 | from SST | ISBA AA | None | OK |
+| -----|-----|------|---------|----|--------------|-----------------|----------|---------|---------------|--------|
+|AAi001  | EXP00| MP026        | ERA5      | 1200 | Yes | 121    | from SST | ISBA AA  | None                    | ssh/sal/u -1.7977+308 at 0,0 & 193,39,38, kt=1 |
+|AAi001  |EXP00b| MP026        | ERA5      | 60   | Yes | 121    | from SST | ISBA AA  | None                    |sal e+308 at 0,0 & 193,39,38, kt=1 (ssh,u ok)|
+|AAi001  |EXP01 | MP026 nomask | ERA5      | 1200 | Yes | 121    | from SST | ISBA AA  | None                    | segmentation fault at kt=2 |
+|AAi001d |EXP00 | MP026 nomask | ERA5      | 1200 | Yes | 121    | from SST | ISBA AA  | -g -fpe0 -CB -traceback | floating invalid in icevar.f90 |
+|AAi001d |EXP01 | MP026 nomask | ERA5      | 1200 | Yes | 121    | None     | ISBA AA  | -g -fpe0 -CB -traceback | floating invalid in iceistate.f90 |
+|AAi001d |EXP01 | MP026 nomask | ERA5      | 1200 | Yes | 121    | None     | ISBA AA  | -g -CB -traceback       | Subscript #3 of the array PE3 has value 0 which is less than the lower bound of 1 in isftbl.f90 |
+|AAi001  |EXP02 | MP026        | ERA5      | 1200 | No  | 121    | from SST |  ISBA AA |None                     | ssh/sal/u -1.7977+308 at 0,0 & 187,79,1, kt=1 |
+|AAi001  |EXP03 | WOA          | JRA55     | 1200 | Yes | 75     | from SST | ISBA AA  | None                    | kt 4 U   max   10.72     at i j k 493 487  1 MPI rank 150 |
+|AAi001  |EXP03b| WOA          | JRA55     | 600  | No  | 75     | from SST | ISBA JMM | None                    | OK |
+|AAi001  |EXP03c| WOA_4.2      | JRA55_4.2 | 600  | No  | 75_4.2 | from SST | ISBA JMM | None                    | OK |
+|AAi001  |EXP04 | WOA_4.2      | ERA5_4.2  | 600  | No  | 75_4.2 | from SST | ISBA JMM | None                    | OK |
+|AAi001  |EXP05 | WOA_4.2      | ERA5_4.2  | 600  | No  | 75_4.2 | from SST | ISBA AA  | None                    | OK |
+|AAi001  |EXP06 | MP026_4.2    | ERA5_4.2  | 600  | No  | 75_4.2 | from SST | ISBA AA  | None                    | OK |
 
 
 
