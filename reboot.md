@@ -139,18 +139,19 @@ OASIS_LIB=""
  - résumé des expériences :
 
 
-| Conf | Exp | Init | Forcing | Dt | Ice cavities | Ice init | Debug options | Result |
-| --------------- |---------------|-----|--|--|--|--|--|--|
-|AAi001 | EXP00 | MP026 | ERA5 | 1200 | Yes | from SST | None | ssh/sal/u -1.7977+308 at 0,0 & 193,39,38, kt=1 |
-|AAi001 |EXP00b | MP026 | ERA5 | 60 | Yes | from SST | None |sal e+308 at 0,0 & 193,39,38, kt=1 (ssh,u ok)|
-|AAi001 |EXP01 | MP026 nomask | ERA5 | 1200 | Yes | from SST | None | segmentation fault at kt=2 |
-|AAi001d |EXP00 | MP026 nomask | ERA5 | 1200 | Yes | from SST | -g -fpe0 -CB -traceback | floating invalid in icevar.f90 |
-|AAi001d |EXP01 | MP026 nomask | ERA5 | 1200 | Yes | None | -g -fpe0 -CB -traceback | floating invalid in iceistate.f90 |
-|AAi001d |EXP01 | MP026 nomask | ERA5 | 1200 | Yes | None | -g -CB -traceback | Subscript #3 of the array PE3 has value 0 which is less than the lower bound of 1 in isftbl.f90 |
-|AAi001 |EXP02 | MP026 | ERA5 | 1200 | No | from SST | None | ssh/sal/u -1.7977+308 at 0,0 & 187,79,1, kt=1 |
-|AAi001 |EXP02 | MP026 | JRA | 1200 | Yes | None | from SST | None | |
-|AAi001 |EXP03 | WOA | JRA | 1200 | Yes | None | from SST | None | |
-|AAi001 |EXP04 | WOA | JRA | 1200 | No | None | from SST | None | |
+| Conf | Exp | Init | Forcing | Dt | Ice cavities | Vertical levels | Ice init | Debug options | Result |
+| --------------- |---------------|-----|--|--|--|--|--|--|--|
+|AAi001 | EXP00 | MP026 | ERA5 | 1200 | Yes | 121 | from SST | None | ssh/sal/u -1.7977+308 at 0,0 & 193,39,38, kt=1 |
+|AAi001 |EXP00b | MP026 | ERA5 | 60 | Yes | 121 | from SST | None |sal e+308 at 0,0 & 193,39,38, kt=1 (ssh,u ok)|
+|AAi001 |EXP01 | MP026 nomask | ERA5 | 1200 | Yes | 121 | from SST | None | segmentation fault at kt=2 |
+|AAi001d |EXP00 | MP026 nomask | ERA5 | 1200 | Yes | 121 | from SST | -g -fpe0 -CB -traceback | floating invalid in icevar.f90 |
+|AAi001d |EXP01 | MP026 nomask | ERA5 | 1200 | Yes | 121 | None | -g -fpe0 -CB -traceback | floating invalid in iceistate.f90 |
+|AAi001d |EXP01 | MP026 nomask | ERA5 | 1200 | Yes | 121 | None | -g -CB -traceback | Subscript #3 of the array PE3 has value 0 which is less than the lower bound of 1 in isftbl.f90 |
+|AAi001 |EXP02 | MP026 | ERA5 | 1200 | No | 121 | from SST | None | ssh/sal/u -1.7977+308 at 0,0 & 187,79,1, kt=1 |
+|AAi001 |EXP03 | MP026 | ERA5 | 1200 | Yes | 75 | from SST | None |  |
+|AAi001 |EXP04 | MP026 | ERA5 | 1200 | Yes | 121 | from SST | None | |
+|AAi001 |EXP05 | WOA | JRA | 1200 | Yes | 121 | from SST | None | |
+|AAi001 |EXP06 | WOA | JRA | 1200 | No | 121 | from SST | None | |
 
 
    
