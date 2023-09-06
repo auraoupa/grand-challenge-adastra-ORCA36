@@ -155,6 +155,7 @@ OASIS_LIB=""
 |AAi001  |EXP05 | WOA_4.2      | ERA5_4.2  | 600  | No  | 75_4.2 | from SST | ISBA AA  | None                    | OK |
 |AAi001  |EXP06 | MP026_4.2    | ERA5_4.2  | 600  | No  | 75_4.2 | from SST | ISBA AA  | None                    | segmentation fault at kt=2 |
 |AAi001d |EXP06 | MP026_4.2    | ERA5_4.2  | 600  | No  | 75_4.2 | from SST | ISBA AA  | -g  -CB -traceback      | Subscript #2 of the array RKRGB has value -2147483648 which is less than the lower bound of 1 in traqsr.f90 |
+|AAi001  |EXP07 | WOA_4.2      | ERA5_4.2  | 600  | No  | 121_4.2| from SST | ISBA AA  | None                    |  |
 
 
 
