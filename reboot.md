@@ -153,7 +153,6 @@ OASIS_LIB=""
 |AAi001  |EXP03c| WOA          | JRA55 | 600  | No  | No  | 75 | from SST | ISBA JMM | Yes      | None                    | OK |
 |AAi001  |EXP04 | WOA          | ERA5  | 600  | No  | No  | 75 | from SST | ISBA JMM | Yes      | None                    | OK |
 |AAi001  |EXP05 | WOA          | ERA5  | 600  | No  | No  | 75 | from SST | ISBA AA  | Yes      | None                    | OK |
-|AAi001  |EXP05b| WOA          | ERA5  | 600  | Yes | Yes | 75 | from SST | ISBA AA  | Yes      | None                    |  |
 |AAi001  |EXP06 | MP026        | ERA5  | 600  | No  | No  | 75 | from SST | ISBA AA  | Yes      | None                    | segmentation fault at kt=2 |
 |AAi001  |EXP06b| MP026        | ERA5  | 600  | No  | No  | 75 | from SST | ISBA AA  | No       | None                    | OK |
 |AAi001d |EXP06 | MP026        | ERA5  | 600  | No  | No  | 75 | from SST | ISBA AA  | Yes      | -g  -CB -traceback      | Subscript #2 of the array RKRGB has value -2147483648 which is less than the lower bound of 1 in traqsr.f90 |
@@ -165,8 +164,7 @@ OASIS_LIB=""
 |AAi001  |EXP09 | WOA          | ERA5  | 600  | Yes | No  | 121| from SST | ISBA AA  | Yes      | None                    | segmentation fault at kt=2 |
 |AAi001d |EXP09 | WOA          | ERA5  | 600  | Yes | No  | 121| from SST | ISBA AA  | Yes      | -g -CB -traceback       | Subscript #2 of the array RKRGB has value -2147483648 which is less than the lower bound of 1 in traqsr.f90 |
 |AAi001d |EXP09 | WOA          | ERA5  | 600  | Yes | No  | 121| from SST | ISBA AA  | No       | -g -CB -traceback       | ssh/sal/u -1.7977+308 at 0,0 & 193,39,38, kt=3 |
-
-|AAi001  |EXP05b | WOA          | ERA5  | 600  | Yes  | Yes  | 75 | from SST | ISBA AA  | Yes      | None                    | 
+|AAi001  |EXP010| WOA          | ERA5  | 600  | Yes | Yes | 75 | from SST | ISBA AA  | Yes      | None                    |  |
 
 - ce qui marche :
 | Conf   | Exp  | Init         | Atm F | Dt   | Isf | Cav |zlev| Ice init | Runoffs  | Chl file | Debug options           | 
