@@ -160,7 +160,7 @@ OASIS_LIB=""
 |AAi001dd|EXP06 | MP026        | ERA5  | 600  | No  | No  | 75 | from SST | ISBA AA  | No       | -g  -fpe0 -CB -traceback| floating invalid in iceistate.f90 |
 |AAi001  |EXP07 | WOA          | ERA5  | 600  | No  | No  | 121| from SST | ISBA AA  | Yes      | None                    | OK |
 |AAi001  |EXP08 | MP026        | ERA5  | 600  | No  | No  | 121| from SST | ISBA AA  | Yes      | None                    | ssh/sal/u -1.7977+308 at 0,0 & 187,79,1, kt=1 |
-|AAi001  |EXP08b| MP026        | ERA5  | 600  | No  | No  | 121| from SST | ISBA AA  | No       | None                    | |
+|AAi001  |EXP08b| MP026        | ERA5  | 600  | No  | No  | 121| from SST | ISBA AA  | No       | None                    | ssh/sal/u -1.7977+308 at 0,0 & 187,79,1, kt=1 |
 |AAi001  |EXP09 | WOA          | ERA5  | 600  | Yes | No  | 121| from SST | ISBA AA  | Yes      | None                    | segmentation fault at kt=2 |
 |AAi001d |EXP09 | WOA          | ERA5  | 600  | Yes | No  | 121| from SST | ISBA AA  | Yes      | -g -CB -traceback       | Subscript #2 of the array RKRGB has value -2147483648 which is less than the lower bound of 1 in traqsr.f90 |
 |AAi001d |EXP09 | WOA          | ERA5  | 600  | Yes | No  | 121| from SST | ISBA AA  | No       | -g -CB -traceback       | ssh/sal/u -1.7977+308 at 0,0 & 193,39,38, kt=3 |
