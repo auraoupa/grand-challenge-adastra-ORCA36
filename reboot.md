@@ -167,6 +167,7 @@ OASIS_LIB=""
 |AAi001  |EXP010| WOA          | ERA5  | 600  | Yes | Yes | 75 | from SST | ISBA AA  | No       | None                    | ssh/sal/u -1.7977+308 at 0,0 & 191,39,35, kt=3  |
 
 - ce qui marche :
+- 
 | Conf   | Exp  | Init         | Atm F | Dt   | Isf | Cav |zlev| Ice init | Runoffs  | Chl file | Debug options           | 
 | -------|------|--------------|-------|------|-----|-----|----|----------|----------|----------|-------------------------|
 |AAi001  |EXP05 | WOA          | ERA5  | 600  | No  | No  | 75 | from SST | ISBA AA  | Yes      | None                    | 
@@ -175,11 +176,12 @@ OASIS_LIB=""
 
 
 - on veut que ce run marche :
+- 
 | Conf   | Exp  | Init         | Atm F | Dt   | Isf | Cav |zlev| Ice init | Runoffs  | Chl file | Debug options           | 
 | -------|------|--------------|-------|------|-----|-----|----|----------|----------|----------|-------------------------|
 |AAi001  |      | MP026        | ERA5  |  600 | Yes | Yes | 121| from SST | ISBA AA  | Yes      | None                    |
   
-- donc il faut comprendre ce qui se passe mal quand 
+- donc il faut comprendre ce qui se passe mal quand :
  - on passe de 75 à 121 niveaux en comparant EXP06b et EXP08b
  - on passe de WOA à MP026 (121 niveaux pour les 2) en comparant EXP07 et EXP08
  - on branche les ice-shelfs en comparant EXP05 et EXP010
