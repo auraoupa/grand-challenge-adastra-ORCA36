@@ -182,6 +182,7 @@ OASIS_LIB=""
 |AAi001  |      | MP026        | ERA5  |  600 | Yes | Yes | 121| from SST | ISBA AA  | Yes      | None                    |
   
 - donc il faut comprendre ce qui se passe mal quand :
+  
       - on passe de 75 à 121 niveaux en comparant EXP06b et EXP08b
       - on passe de WOA à MP026 (121 niveaux pour les 2) en comparant EXP07 et EXP08
       - on branche les ice-shelfs en comparant EXP05 et EXP010
