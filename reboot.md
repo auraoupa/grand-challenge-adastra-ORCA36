@@ -164,7 +164,12 @@ OASIS_LIB=""
 |AAi001  |EXP09 | WOA          | ERA5  | 600  | Yes | No  | 121| from SST | ISBA AA  | Yes      | None                    | segmentation fault at kt=2 |
 |AAi001d |EXP09 | WOA          | ERA5  | 600  | Yes | No  | 121| from SST | ISBA AA  | Yes      | -g -CB -traceback       | Subscript #2 of the array RKRGB has value -2147483648 which is less than the lower bound of 1 in traqsr.f90 |
 |AAi001d |EXP09 | WOA          | ERA5  | 600  | Yes | No  | 121| from SST | ISBA AA  | No       | -g -CB -traceback       | ssh/sal/u -1.7977+308 at 0,0 & 193,39,38, kt=3 |
-|AAi001  |EXP010| WOA          | ERA5  | 600  | Yes | Yes | 75 | from SST | ISBA AA  | No       | None                    | ssh/sal/u -1.7977+308 at 0,0 & 191,39,35, kt=3  |
+|AAi001  |EXP10| WOA          | ERA5  | 600  | Yes | Yes | 75 | from SST | ISBA AA  | No       | None                    | ssh/sal/u -1.7977+308 at 0,0 & 191,39,35, kt=3  |
+|AAi001  |EXP11 | WOA          | ERA5  | 600  | No  | No  | 75 | None    | ISBA AA  | Yes      | None                    | OK |
+|AAi001  |EXP12 | WOA          | ERA5  | 600  | No  | No  | 121| None    | ISBA AA  | Yes      | None                    | OK |
+|AAi001  |EXP13 | MP026        | ERA5  | 600  | No  | No  | 121| None    | ISBA AA  | Yes      | None                    | ssh/sal/u -1.7977+308 at 0,0 & 187,79,1, kt=1 |
+|AAi001  |EXP14 | MP026 nomask | ERA5  | 600  | No  | No  | 121| None    | ISBA AA  | No       | None                    | OK |
+|AAi001  |EXP15 | MP026 nomask | ERA5  | 600  | Yes | Yes | 121| None    | ISBA AA  | No       | None                    | ssh/sal/u -1.7977+308 at 0,0 & 193,39,39, kt=4 |
 
 - ce qui marche :
   
@@ -184,8 +189,8 @@ OASIS_LIB=""
 - donc il faut comprendre ce qui se passe mal quand :
   
       - on passe de 75 à 121 niveaux en comparant EXP06b et EXP08b
-      - on passe de WOA à MP026 (121 niveaux pour les 2) en comparant EXP07 et EXP08
-      - on branche les ice-shelfs en comparant EXP05 et EXP010
+      - on passe de WOA à MP026 (121 niveaux pour les 2) en comparant EXP12 et EXP13
+      - on branche les ice-shelfs en comparant EXP11 et EXP010
 
 
    
