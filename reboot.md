@@ -190,7 +190,7 @@ OASIS_LIB=""
 |AAi001  |EXP14 | MP026 nomask | ERA5  | 600  | No  | No  | 121| None     | ISBA AA  | No       | None                    | OK |
 
 - on se rend compte alors que en enlevant la lecture du fichier de chlorophylle et en n'initialisant pas la glace avec le critère en SST, la configuration tourne bien en 121 niveaux, avec l'état initial MP026 (EXP14)
-- il reste alors à brancher les cavités, mais cela explose en divers points, même lorsque je mets remplis les cavités (isf=0) au point où cela explose (domain v1 et v2) et en modifiant l'état initial :
+- il reste alors à brancher les cavités, mais cela explose en divers points, même lorsque je mets remplis les cavités (isf=0) au point où cela explose (domain v2) et en modifiant l'état initial :
 
 | Conf   | Exp  | Init         | Atm F | Dt   | Isf | Cav |zlev| Ice init | Runoffs  | Chl file | Domain file | Debug options           | Result |
 | -------|------|--------------|-------|------|-----|-----|----|----------|----------|----------|-------------|-------------------------|--------|
