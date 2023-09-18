@@ -161,15 +161,6 @@ OASIS_LIB=""
 |AAi001  |EXP07 | WOA          | ERA5  | 600  | No  | No  | 121| from SST | ISBA AA  | Yes      | None                    | OK |
 |AAi001  |EXP08 | MP026        | ERA5  | 600  | No  | No  | 121| from SST | ISBA AA  | Yes      | None                    | ssh/sal/u -1.7977+308 at 0,0 & 187,79,1, kt=1 |
 |AAi001  |EXP08b| MP026        | ERA5  | 600  | No  | No  | 121| from SST | ISBA AA  | No       | None                    | ssh/sal/u -1.7977+308 at 0,0 & 187,79,1, kt=1 |
-|AAi001  |EXP09 | WOA          | ERA5  | 600  | Yes | No  | 121| from SST | ISBA AA  | Yes      | None                    | segmentation fault at kt=2 |
-|AAi001d |EXP09 | WOA          | ERA5  | 600  | Yes | No  | 121| from SST | ISBA AA  | Yes      | -g -CB -traceback       | Subscript #2 of the array RKRGB has value -2147483648 which is less than the lower bound of 1 in traqsr.f90 |
-|AAi001d |EXP09 | WOA          | ERA5  | 600  | Yes | No  | 121| from SST | ISBA AA  | No       | -g -CB -traceback       | ssh/sal/u -1.7977+308 at 0,0 & 193,39,38, kt=3 |
-|AAi001  |EXP10| WOA          | ERA5  | 600  | Yes | Yes | 75 | from SST | ISBA AA  | No       | None                    | ssh/sal/u -1.7977+308 at 0,0 & 191,39,35, kt=3  |
-|AAi001  |EXP11 | WOA          | ERA5  | 600  | No  | No  | 75 | None    | ISBA AA  | Yes      | None                    | OK |
-|AAi001  |EXP12 | WOA          | ERA5  | 600  | No  | No  | 121| None    | ISBA AA  | Yes      | None                    | OK |
-|AAi001  |EXP13 | MP026        | ERA5  | 600  | No  | No  | 121| None    | ISBA AA  | Yes      | None                    | ssh/sal/u -1.7977+308 at 0,0 & 187,79,1, kt=1 |
-|AAi001  |EXP14 | MP026 nomask | ERA5  | 600  | No  | No  | 121| None    | ISBA AA  | No       | None                    | OK |
-|AAi001  |EXP15 | MP026 nomask | ERA5  | 600  | Yes | Yes | 121| None    | ISBA AA  | No       | None                    | ssh/sal/u -1.7977+308 at 0,0 & 193,39,39, kt=4 |
 
 - ce qui marche :
   
@@ -178,20 +169,40 @@ OASIS_LIB=""
 |AAi001  |EXP05 | WOA          | ERA5  | 600  | No  | No  | 75 | from SST | ISBA AA  | Yes      | None                    | 
 |AAi001  |EXP07 | WOA          | ERA5  | 600  | No  | No  | 121| from SST | ISBA AA  | Yes      | None                    | 
 |AAi001  |EXP06b| MP026        | ERA5  | 600  | No  | No  | 75 | from SST | ISBA AA  | No       | None                    |
-
-
-- on veut que ce run marche :
-  
-| Conf   | Exp  | Init         | Atm F | Dt   | Isf | Cav |zlev| Ice init | Runoffs  | Chl file | Debug options           | 
-| -------|------|--------------|-------|------|-----|-----|----|----------|----------|----------|-------------------------|
-|AAi001  |      | MP026        | ERA5  |  600 | Yes | Yes | 121| from SST | ISBA AA  | Yes      | None                    |
   
 - donc il faut comprendre ce qui se passe mal quand :
   
-      - on passe de 75 à 121 niveaux en comparant EXP06b et EXP08b
-      - on passe de WOA à MP026 (121 niveaux pour les 2) en comparant EXP12 et EXP13
-      - on branche les ice-shelfs en comparant EXP11 et EXP010
+      - on passe de 75 à 121 niveaux
+      - on passe de WOA à MP026 (121 niveaux pour les 2)
+      - on branche les ice-shelfs
+  
+- quelques tests supplémentaires :
 
+| Conf   | Exp  | Init         | Atm F | Dt   | Isf | Cav |zlev| Ice init | Runoffs  | Chl file | Debug options           | 
+| -------|------|--------------|-------|------|-----|-----|----|----------|----------|----------|-------------------------|
+|AAi001  |EXP09 | WOA          | ERA5  | 600  | Yes | No  | 121| from SST | ISBA AA  | Yes      | None                    | segmentation fault at kt=2 |
+|AAi001d |EXP09 | WOA          | ERA5  | 600  | Yes | No  | 121| from SST | ISBA AA  | Yes      | -g -CB -traceback       | Subscript #2 of the array RKRGB has value -2147483648 which is less than the lower bound of 1 in traqsr.f90 |
+|AAi001d |EXP09 | WOA          | ERA5  | 600  | Yes | No  | 121| from SST | ISBA AA  | No       | -g -CB -traceback       | ssh/sal/u -1.7977+308 at 0,0 & 193,39,38, kt=3 |
+|AAi001  |EXP10| WOA          | ERA5  | 600  | Yes | Yes | 75 | from SST | ISBA AA  | No       | None                    | ssh/sal/u -1.7977+308 at 0,0 & 191,39,35, kt=3  |
+|AAi001  |EXP11 | WOA          | ERA5  | 600  | No  | No  | 75 | None    | ISBA AA  | Yes      | None                    | OK |
+|AAi001  |EXP12 | WOA          | ERA5  | 600  | No  | No  | 121| None    | ISBA AA  | Yes      | None                    | OK |
+|AAi001  |EXP13 | MP026        | ERA5  | 600  | No  | No  | 121| None    | ISBA AA  | Yes      | None                    | ssh/sal/u -1.7977+308 at 0,0 & 187,79,1, kt=1 |
+|AAi001  |EXP14 | MP026 nomask | ERA5  | 600  | No  | No  | 121| None    | ISBA AA  | No       | None                    | OK |
 
-   
+- on se rend compte alors que en enlevant la lecture du fichier de chlorophylle et en n'initialisant pas la glace avec le critère en SST, la configuration tourne bien en 121 niveaux, avec l'état initial MP026 (EXP14)
+- il reste alors à brancher les cavités, mais cela explose en divers points, même lorsque je mets remplis les cavités (isf=0) au point où cela explose (domain v1 et v2) et en modifiant l'état initial :
+
+| Conf   | Exp  | Init         | Atm F | Dt   | Isf | Cav |zlev| Ice init | Runoffs  | Chl file | Domain file | Debug options           | 
+| -------|------|--------------|-------|------|-----|-----|----|----------|----------|----------|-------------|-------------------------|
+|AAi001  |EXP15 | MP026 nomask | ERA5  | 600  | Yes | Yes | 121| None     | ISBA AA  | No       | v1          | None                    | ssh/sal/u -1.7977+308 at 0,0 & 193,39,39, kt=4 |
+|AAi001  |EXP15b| MP026 nomask | ERA5  | 360  | Yes | Yes | 121| None     | ISBA AA  | No       | v1          | None                    | ssh/sal/u -1.7977+308 at 0,0 & 193,39,38, kt=4 |
+|AAi001  |EXP16 | MP026 nomask | ERA5  | 600  | Yes | Yes | 121| None     | ISBA AA  | No       | v2          | None                    | ssh/sal/u -1.7977+308 at 231,17 & 234,36,34, kt=4 |
+|AAi001  |EXP17 | MP026nomaskv2| ERA5  | 600  | Yes | Yes | 121| None     | ISBA AA  | No       | v2          | None                    | ssh/sal/u -1.7977+308 at 231,17 & 234,36,34, kt=4 |
+
+- en examinant les fichiers domaine et mask, je me rends compte en fait qu'ils n'ont pas été correctement construits, je dois les refaire à l'aide de l'outil DOMAINcfg de NEMO modifié par Pierre Mathiot pour mieux traiter les cavités (construction sur jean-zay : /gpfswork/rech/cli/rote001/eORCA05.L121/eORCA05.L121-I/MK_DOMAIN_PM, outil /gpfswork/rech/cli/rcli002/WeORCA025.L75-4.2.0/tools/DOMAINcfgPM/make_domain_cfg.exe, et résultats eORCA05.L121_domain_cfg_isfcav_PM_4.2.nc, eORCA05.L121_mesh_mask_PM_4.2.nc) mais cela explose toujours, dès le premier pas de temps cette fois :
+
+| Conf   | Exp  | Init         | Atm F | Dt   | Isf | Cav |zlev| Ice init | Runoffs  | Chl file | Domain file | Debug options           | 
+| -------|------|--------------|-------|------|-----|-----|----|----------|----------|----------|-------------|-------------------------|
+|AAi001  |EXP18 | MP026 PM     | ERA5  | 600  | Yes | Yes | 121| None     | ISBA AA  | No       | PM          | None                    | ssh/sal/u -1.7977+308 at 0,0 & 193,39,34, kt=1 |
+
    
