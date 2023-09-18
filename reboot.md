@@ -199,10 +199,10 @@ OASIS_LIB=""
 |AAi001  |EXP16 | MP026 nomask | ERA5  | 600  | Yes | Yes | 121| None     | ISBA AA  | No       | v2          | None                    | ssh/sal/u -1.7977+308 at 231,17 & 234,36,34, kt=4 |
 |AAi001  |EXP17 | MP026nomaskv2| ERA5  | 600  | Yes | Yes | 121| None     | ISBA AA  | No       | v2          | None                    | ssh/sal/u -1.7977+308 at 231,17 & 234,36,34, kt=4 |
 
-- en examinant les fichiers domaine et mask, je me rends compte en fait qu'ils n'ont pas été correctement construits, je dois les refaire à l'aide de l'outil DOMAINcfg de NEMO modifié par Pierre Mathiot pour mieux traiter les cavités (construction sur jean-zay : /gpfswork/rech/cli/rote001/eORCA05.L121/eORCA05.L121-I/MK_DOMAIN_PM, outil /gpfswork/rech/cli/rcli002/WeORCA025.L75-4.2.0/tools/DOMAINcfgPM/make_domain_cfg.exe, et résultats eORCA05.L121_domain_cfg_isfcav_PM_4.2.nc, eORCA05.L121_mesh_mask_PM_4.2.nc) mais cela explose toujours, dès le premier pas de temps cette fois :
+- en examinant les fichiers domain et mask, je me rends compte en fait qu'ils n'ont pas été correctement construits, je dois donc les refaire à l'aide de l'outil DOMAINcfg de NEMO modifié par Pierre Mathiot pour mieux traiter les cavités (construction sur jean-zay : /gpfswork/rech/cli/rote001/eORCA05.L121/eORCA05.L121-I/MK_DOMAIN_PM, outil /gpfswork/rech/cli/rcli002/WeORCA025.L75-4.2.0/tools/DOMAINcfgPM/make_domain_cfg.exe, et résultats eORCA05.L121_domain_cfg_isfcav_PM_4.2.nc, eORCA05.L121_mesh_mask_PM_4.2.nc) mais cela explose toujours, dès le premier pas de temps cette fois :
 
 | Conf   | Exp  | Init         | Atm F | Dt   | Isf | Cav |zlev| Ice init | Runoffs  | Chl file | Domain file | Debug options           | Result |
-| -------|------|--------------|-------|------|-----|-----|----|----------|----------|----------|-------------|-------------------------|
+| -------|------|--------------|-------|------|-----|-----|----|----------|----------|----------|-------------|-------------------------|--------|
 |AAi001  |EXP18 | MP026 PM     | ERA5  | 600  | Yes | Yes | 121| None     | ISBA AA  | No       | PM          | None                    | ssh/sal/u -1.7977+308 at 0,0 & 193,39,34, kt=1 |
 
    
