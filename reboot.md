@@ -204,6 +204,10 @@ OASIS_LIB=""
 | Conf   | Exp  | Init         | Atm F | Dt   | Isf | Cav |zlev| Ice init | Runoffs  | Chl file | Domain file | Debug options           | Result |
 | -------|------|--------------|-------|------|-----|-----|----|----------|----------|----------|-------------|-------------------------|--------|
 |AAi001  |EXP18 | MP026 PM     | ERA5  | 600  | Yes | Yes | 121| None     | ISBA AA  | No       | PM          | None                    | ssh/sal/u -1.7977+308 at 0,0 & 193,39,34, kt=1 |
+|AAi001  |EXP20 | MP026 PM     | ERA5  | 600  | Yes | Yes | 121| None     | ISBA AA  | No       | PM-15m      | None                    | ssh/sal/u -1.7977+308 at 0,0 & 193,39,34, kt=2 |
+|AAi001  |EXP21 | MP026 PM     | ERA5  | 600  | Yes | Yes | 121| None     | ISBA AA  | No       | PM-15m-v2      | None                    | ssh/sal/u -1.7977+308 at 0,0 & 193,39,34, kt=2 |
+|AAi001  |EXP22 | MP026 PM     | ERA5  | 60  | Yes | Yes | 121| None     | ISBA AA  | No       | PM-15m      | None                    |  |
+|AAi001  |EXP23 |MP026 PM drown| ERA5  | 60  | Yes | Yes | 121| None     | ISBA AA  | No       | PM-15m      | None                    |  |
 
 
 
