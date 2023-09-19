@@ -205,4 +205,18 @@ OASIS_LIB=""
 | -------|------|--------------|-------|------|-----|-----|----|----------|----------|----------|-------------|-------------------------|--------|
 |AAi001  |EXP18 | MP026 PM     | ERA5  | 600  | Yes | Yes | 121| None     | ISBA AA  | No       | PM          | None                    | ssh/sal/u -1.7977+308 at 0,0 & 193,39,34, kt=1 |
 
+
+
+-  en parallèle je relance les tests avec eORCA36, en enlevant le critère en SST pour l'initialisation de la glace et le fichier de chl :
+
+| Conf   | Exp  | Init         | Atm F | Dt   | Isf | Cav |zlev| Ice init | Runoffs  | Chl file | Domain file | nn_icesal | Debug options           | Result |
+| -------|------|--------------|-------|------|-----|-----|----|----------|----------|----------|-------------|-----------|------------|--------|
+|AAi003  |EXP01 | MP026 PM     | ERA5  | 60  | Yes | Yes | 121| None     | ISBA AA  | No       | PM          | 2         |None        | sal -1.7977+308 at 4675,75,16 kt=1 |
+|AAi001dd|EXP10 | MP026 PM     | ERA5  | 60  | Yes | Yes | 121| None     | ISBA AA  | No       | PM          | 2         |-g  -fpe0 -CB -traceback|  floating invalid in icevar.f90 (time varying salinity with linear profile) |
+|AAi001dd|EXP11 | MP026 PM     | ERA5  | 60  | Yes | Yes | 121| None     | ISBA AA  | No       | PM          | 1         |-g  -fpe0 -CB -traceback|  floating invalid in isfcavmlt.f90 |
+|AAi003  |EXP04 | MP026 PM     | ERA5  | 60  | No  | No  | 121| None     | ISBA AA  | No       | PM          | 2         |None        |  |
+
+
+   
+
    
