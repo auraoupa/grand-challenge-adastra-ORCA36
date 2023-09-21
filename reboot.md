@@ -205,22 +205,27 @@ OASIS_LIB=""
 | -------|------|--------------|-------|------|-----|-----|----|----------|----------|----------|-------------|-------------------------|--------|
 |AAi001  |EXP18 | MP026 PM     | ERA5  | 600  | Yes | Yes | 121| None     | ISBA AA  | No       | PM          | None                    | ssh/sal/u -1.7977+308 at 0,0 & 193,39,34, kt=1 |
 |AAi001  |EXP20 | MP026 PM     | ERA5  | 600  | Yes | Yes | 121| None     | ISBA AA  | No       | PM-15m      | None                    | ssh/sal/u -1.7977+308 at 0,0 & 193,39,34, kt=2 |
-|AAi001  |EXP21 | MP026 PM     | ERA5  | 600  | Yes | Yes | 121| None     | ISBA AA  | No       | PM-15m-v2      | None                    | ssh/sal/u -1.7977+308 at 0,0 & 193,39,34, kt=2 |
-|AAi001  |EXP22 | MP026 PM     | ERA5  | 60  | Yes | Yes | 121| None     | ISBA AA  | No       | PM-15m      | None                    |  |
-|AAi001  |EXP23 |MP026 PM drown| ERA5  | 60  | Yes | Yes | 121| None     | ISBA AA  | No       | PM-15m      | None                    |  |
+|AAi001  |EXP21 | MP026 PM     | ERA5  | 600  | Yes | Yes | 121| None     | ISBA AA  | No       | PM-15m-v2   | None                    | ssh/sal/u -1.7977+308 at 0,0 & 193,39,34, kt=2 |
+|AAi001  |EXP22 | MP026 PM     | ERA5  | 60   | Yes | Yes | 121| None     | ISBA AA  | No       | PM-15m      | None                    | ssh/sal/u -1.7977+308 at 0,0 & 193,39,34, kt=2 |
+|AAi001  |EXP23 |MP026 PM drown| ERA5  | 600  | Yes | Yes | 121| None     | ISBA AA  | No       | PM-15m      | None                    | ssh/sal/u -1.7977+308 at 0,0 & 193,39,34, kt=3 |
+|AAi001dd|EXP23 |MP026 PM drown| ERA5  | 600  | Yes | Yes | 121| None     | ISBA AA  | No       | PM-15m      |-g  -fpe0 -CB -traceback | floating invalid in isfcavmlt.f90 |
 
+### Maquette eORCA36
 
 
 -  en parallèle je relance les tests avec eORCA36, en enlevant le critère en SST pour l'initialisation de la glace et le fichier de chl :
 
 | Conf   | Exp  | Init         | Atm F | Dt   | Isf | Cav |zlev| Ice init | Runoffs  | Chl file | Domain file | nn_icesal | Debug options           | Result |
 | -------|------|--------------|-------|------|-----|-----|----|----------|----------|----------|-------------|-----------|------------|--------|
-|AAi003  |EXP01 | MP026 PM     | ERA5  | 60  | Yes | Yes | 121| None     | ISBA AA  | No       | PM          | 2         |None        | sal -1.7977+308 at 4675,75,16 kt=1 |
-|AAi001dd|EXP10 | MP026 PM     | ERA5  | 60  | Yes | Yes | 121| None     | ISBA AA  | No       | PM          | 2         |-g  -fpe0 -CB -traceback|  floating invalid in icevar.f90 (time varying salinity with linear profile) |
-|AAi001dd|EXP11 | MP026 PM     | ERA5  | 60  | Yes | Yes | 121| None     | ISBA AA  | No       | PM          | 1         |-g  -fpe0 -CB -traceback|  floating invalid in isfcavmlt.f90 |
-|AAi003  |EXP04 | MP026 PM     | ERA5  | 60  | No  | No  | 121| None     | ISBA AA  | No       | PM          | 2         |None        |  |
+|AAi003  |EXP01 | MP026 PM     | ERA5  | 60   | Yes | Yes | 121| None     | ISBA AA  | No       | PM          | 2         |None        | sal -1.7977+308 at 4675,75,16 kt=1 |
+|AAi001dd|EXP10 | MP026 PM     | ERA5  | 60   | Yes | Yes | 121| None     | ISBA AA  | No       | PM          | 2         |-g  -fpe0 -CB -traceback|  floating invalid in icevar.f90 (time varying salinity with linear profile) |
+|AAi001dd|EXP11 | MP026 PM     | ERA5  | 60   | Yes | Yes | 121| None     | ISBA AA  | No       | PM          | 1         |-g  -fpe0 -CB -traceback|  floating invalid in isfcavmlt.f90 |
 
 
    
-
-   
+- également je teste si en enlevant les cavités cela fonctionne :
+| Conf   | Exp  | Init         | Atm F | Dt   | Isf | Cav |zlev| Ice init | Runoffs  | Chl file | Domain file | nn_icesal | Debug options | Result |
+| -------|------|--------------|-------|------|-----|-----|----|----------|----------|----------|-------------|-----------|---------------|--------|
+|AAi003  |EXP04 | MP026 PM     | ERA5  | 60   | No  | No  | 121| None     | ISBA AA  | No       | PM          | 2         |None        | sal -1.7977+308 at 0,0,1 kt=1 |
+|AAi001dd|EXP14 | MP026 PM     | ERA5  | 60   | No  | No  | 121| None     | ISBA AA  | No       | PM          | 2         |None        |  |
+  
