@@ -209,6 +209,7 @@ OASIS_LIB=""
 |AAi001  |EXP22 | MP026 PM     | ERA5  | 60   | Yes | Yes | 121| None     | ISBA AA  | No       | PM-15m      | None                    | ssh/sal/u -1.7977+308 at 0,0 & 193,39,34, kt=2 |
 |AAi001  |EXP23 |MP026 PM drown| ERA5  | 600  | Yes | Yes | 121| None     | ISBA AA  | No       | PM-15m      | None                    | ssh/sal/u -1.7977+308 at 0,0 & 193,39,34, kt=3 |
 |AAi001dd|EXP23 |MP026 PM drown| ERA5  | 600  | Yes | Yes | 121| None     | ISBA AA  | No       | PM-15m      |-g  -fpe0 -CB -traceback | floating invalid in isfcavmlt.f90 |
+|AAi001  |EXP24 |MP026 bilin   | ERA5  | 600  | Yes | Yes | 121| None     | ISBA AA  | No       | PM-15m      | None                    | kt 332 U   max   20.48     at i j k 272  67  61 MPI rank   6 |
 
 ### Maquette eORCA36
 
