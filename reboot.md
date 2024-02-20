@@ -225,6 +225,7 @@ OASIS_LIB=""
 
    
 - également je teste si en enlevant les cavités cela fonctionne :
+  
 | Conf   | Exp  | Init         | Atm F | Dt   | Isf | Cav |zlev| Ice init | Runoffs  | Chl file | Domain file | nn_icesal | Debug options | Result |
 | -------|------|--------------|-------|------|-----|-----|----|----------|----------|----------|-------------|-----------|---------------|--------|
 |AAi003  |EXP04 | MP026 PM     | ERA5  | 60   | No  | No  | 121| None     | ISBA AA  | No       | PM          | 2         |None        | sal -1.7977+308 at 0,0,1 kt=1 |
